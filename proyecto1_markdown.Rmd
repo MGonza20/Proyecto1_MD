@@ -3,9 +3,11 @@ title: "Proyecto 1 - Minería de datos"
 output: html_document
 ---
 
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(haven)
+db_delitos <- read_sav('./data_delitos.sav')
 ```
-
-## R Markdown
 
