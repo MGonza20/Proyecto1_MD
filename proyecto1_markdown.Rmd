@@ -8,6 +8,7 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
 library(haven)
-db_delitos <- read_sav('./data_delitos.sav')
+data_delitos <- read_sav("data_delitos.sav")
+View(data_delitos)
 ```
 
