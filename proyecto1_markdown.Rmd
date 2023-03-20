@@ -9,6 +9,8 @@ knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
 library(haven)
 data_delitos <- read_sav("data_delitos.sav")
+data_matrimonios <- read_sav("data_matrimonios.sav")
 View(data_delitos)
+View(data_matrimonios)
 ```
 
