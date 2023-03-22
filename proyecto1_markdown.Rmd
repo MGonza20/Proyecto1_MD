@@ -150,4 +150,45 @@ unique(data_matrimonios_2012$OCUMUJ)
 
 
 
+```{r}
+campos_2010_h <- colnames(data_matrimonios_2010)
+campos_2010_h[campos_2010_h == "Ocuhom"] <- "CIUOHOM"
+colnames(data_matrimonios_2010) <- campos_2010_h
+```
+
+```{r}
+campos_2010_m <- colnames(data_matrimonios_2010)
+campos_2010_m[campos_2010_m == "Ocumuj"] <- "CIUOMUJ"
+colnames(data_matrimonios_2010) <- campos_2010_m
+```
+
+```{r}
+campos_2011_h <- colnames(data_matrimonios_2011)
+campos_2011_h[campos_2011_h == "Ocuhom"] <- "CIUOHOM"
+colnames(data_matrimonios_2011) <- campos_2011_h
+```
+
+```{r}
+campos_2011_m <- colnames(data_matrimonios_2011)
+campos_2011_m[campos_2011_m == "Ocumuj"] <- "CIUOMUJ"
+colnames(data_matrimonios_2011) <- campos_2011_m
+```
+
+```{r}
+campos_2012_h <- colnames(data_matrimonios_2012)
+campos_2012_h[campos_2012_h == "OCUHOM"] <- "CIUOHOM"
+colnames(data_matrimonios_2012) <- campos_2012_h
+```
+
+```{r}
+campos_2012_m <- colnames(data_matrimonios_2012)
+campos_2012_m[campos_2012_m == "OCUMUJ"] <- "CIUOMUJ"
+colnames(data_matrimonios_2012) <- campos_2012_m
+```
+
+
+
+
+
+
 
