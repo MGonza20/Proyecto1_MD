@@ -470,14 +470,73 @@ campos_2021_pm[campos_2021_pm == "PUEMUJ"] <- "GETMUJ"
 colnames(data_matrimonios_2021) <- campos_2021_pm
 ```
 
+Convertir de mayusculas a minusculas (data de 2010 y 2011)
+
+``` {r}
+names(data_matrimonios_2010) <- toupper(names(data_matrimonios_2010))
+print(data_matrimonios_2010)
+```
+
+``` {r}
+names(data_matrimonios_2011) <- toupper(names(data_matrimonios_2011))
+print(data_matrimonios_2011)
+```
+
+Borrar las columnas que ya no son necesarias
+
+``` {r}
+data_matrimonios_2010 <- data_matrimonios_2010[, -which(names(data_matrimonios_2010) == "AÑOOCU")]
+data_matrimonios_2010 <- data_matrimonios_2010[, -which(names(data_matrimonios_2010) == "AREAG")]
+```
+
+``` {r}
+data_matrimonios_2011 <- data_matrimonios_2011[, -which(names(data_matrimonios_2011) == "AÑOOCU")]
+```
+
+``` {r}
+data_matrimonios_2011 <- data_matrimonios_2011[, -which(names(data_matrimonios_2011) == "AREAG")]
+```
+
+``` {r}
+data_matrimonios_2012 <- data_matrimonios_2012[, -which(names(data_matrimonios_2012) == "AREAG")]
+```
+
+``` {r}
+# desde el 2012 a 2017 # AREAGOCU
+data_matrimonios_2013 <- data_matrimonios_2013[, -which(names(data_matrimonios_2013) == "AREAGOCU")]
+data_matrimonios_2014 <- data_matrimonios_2014[, -which(names(data_matrimonios_2014) == "AREAGOCU")]
+data_matrimonios_2015 <- data_matrimonios_2015[, -which(names(data_matrimonios_2015) == "AREAGOCU")]
+data_matrimonios_2016 <- data_matrimonios_2016[, -which(names(data_matrimonios_2016) == "AREAGOCU")]
+data_matrimonios_2017 <- data_matrimonios_2017[, -which(names(data_matrimonios_2017) == "AREAGOCU")]
+```
 
 
 
+``` {r}
+# Desde el 2015 en adelante # -> NUNUHO 
+data_matrimonios_2015 <- data_matrimonios_2015[, -which(names(data_matrimonios_2015) == "NUNUHO")]
+data_matrimonios_2016 <- data_matrimonios_2016[, -which(names(data_matrimonios_2016) == "NUNUHO")]
+data_matrimonios_2017 <- data_matrimonios_2017[, -which(names(data_matrimonios_2017) == "NUNUHO")]
+data_matrimonios_2018 <- data_matrimonios_2018[, -which(names(data_matrimonios_2018) == "NUNUHO")]
+data_matrimonios_2019 <- data_matrimonios_2019[, -which(names(data_matrimonios_2019) == "NUNUHO")]
+data_matrimonios_2020 <- data_matrimonios_2020[, -which(names(data_matrimonios_2020) == "NUNUHO")]
+data_matrimonios_2021 <- data_matrimonios_2021[, -which(names(data_matrimonios_2021) == "NUNUHO")]
 
+# -> NUNUMU
+data_matrimonios_2015 <- data_matrimonios_2015[, -which(names(data_matrimonios_2015) == "NUNUMU")]
+data_matrimonios_2016 <- data_matrimonios_2016[, -which(names(data_matrimonios_2016) == "NUNUMU")]
+data_matrimonios_2017 <- data_matrimonios_2017[, -which(names(data_matrimonios_2017) == "NUNUMU")]
+data_matrimonios_2018 <- data_matrimonios_2018[, -which(names(data_matrimonios_2018) == "NUNUMU")]
+data_matrimonios_2019 <- data_matrimonios_2019[, -which(names(data_matrimonios_2019) == "NUNUMU")]
+data_matrimonios_2020 <- data_matrimonios_2020[, -which(names(data_matrimonios_2020) == "NUNUMU")]
+data_matrimonios_2021 <- data_matrimonios_2021[, -which(names(data_matrimonios_2021) == "NUNUMU")]
 
-
-
-
-
-
-
+# -> AÑOOCU
+data_matrimonios_2015 <- data_matrimonios_2015[, -which(names(data_matrimonios_2015) == "AÑOOCU")]
+data_matrimonios_2016 <- data_matrimonios_2016[, -which(names(data_matrimonios_2016) == "AÑOOCU")]
+data_matrimonios_2017 <- data_matrimonios_2017[, -which(names(data_matrimonios_2017) == "AÑOOCU")]
+data_matrimonios_2018 <- data_matrimonios_2018[, -which(names(data_matrimonios_2018) == "AÑOOCU")]
+data_matrimonios_2019 <- data_matrimonios_2019[, -which(names(data_matrimonios_2019) == "AÑOOCU")]
+data_matrimonios_2020 <- data_matrimonios_2020[, -which(names(data_matrimonios_2020) == "AÑOOCU")]
+data_matrimonios_2021 <- data_matrimonios_2021[, -which(names(data_matrimonios_2021) == "AÑOOCU")]
+```
