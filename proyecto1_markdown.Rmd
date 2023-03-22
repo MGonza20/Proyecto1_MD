@@ -12,592 +12,140 @@ library(dplyr)
 
 
 data_matrimonios_2021 <- read_sav("matrimonios_2021.sav")
-View(data_matrimonios_2021)
+#View(data_matrimonios_2021)
 
 data_matrimonios_2020 <- read_sav("matrimonios_2020.sav")
-View(data_matrimonios_2020)
+#View(data_matrimonios_2020)
 
 data_matrimonios_2019 <- read_sav("matrimonios_2019.sav")
-View(data_matrimonios_2019)
+#View(data_matrimonios_2019)
 
 data_matrimonios_2018 <- read_sav("matrimonios_2018.sav")
-View(data_matrimonios_2018)
+#View(data_matrimonios_2018)
 
 data_matrimonios_2017 <- read_sav("matrimonios_2017.sav")
-View(data_matrimonios_2017)
+#View(data_matrimonios_2017)
 
 data_matrimonios_2016 <- read_sav("matrimonios_2016.sav")
-View(data_matrimonios_2016)
+#View(data_matrimonios_2016)
 
 data_matrimonios_2015 <- read_sav("matrimonios_2015.sav")
-View(data_matrimonios_2015)
+#View(data_matrimonios_2015)
 
 data_matrimonios_2014 <- read_sav("matrimonios_2014.sav")
-View(data_matrimonios_2014)
+#View(data_matrimonios_2014)
 
 data_matrimonios_2013 <- read_sav("matrimonios_2013.sav")
-View(data_matrimonios_2013)
+#View(data_matrimonios_2013)
 
 data_matrimonios_2012 <- read_sav("matrimonios_2012.sav")
-View(data_matrimonios_2012)
+#View(data_matrimonios_2012)
 
 data_matrimonios_2011 <- read_sav("matrimonios_2011.sav")
-View(data_matrimonios_2011)
+#View(data_matrimonios_2011)
 
 data_matrimonios_2010 <- read_sav("matrimonios_2010.sav")
-View(data_matrimonios_2010)
-
-
-```
-
-
-
-```{r}
-
-data_matrimonios_2010$Ocuhom <- ifelse(substr(data_matrimonios_2010$Ocuhom, 1, 2) == "01", "01", data_matrimonios_2010$Ocuhom)
-
-data_matrimonios_2010$Ocuhom <- ifelse(substr(data_matrimonios_2010$Ocuhom, 1, 2) == "03", "03", data_matrimonios_2010$Ocuhom)
-
-data_matrimonios_2010$Ocuhom <- ifelse(substr(data_matrimonios_2010$Ocuhom, 1, 2) == "11", "11", data_matrimonios_2010$Ocuhom)
-
-data_matrimonios_2010$Ocuhom <- ifelse(substr(data_matrimonios_2010$Ocuhom, 1, 2) == "12", "12", data_matrimonios_2010$Ocuhom)
-
-data_matrimonios_2010$Ocuhom <- ifelse(substr(data_matrimonios_2010$Ocuhom, 1, 2) == "13", "13", data_matrimonios_2010$Ocuhom)
-
-data_matrimonios_2010$Ocuhom <- ifelse(substr(data_matrimonios_2010$Ocuhom, 1, 2) == "14", "14", data_matrimonios_2010$Ocuhom)
-
-data_matrimonios_2010$Ocuhom <- ifelse(substr(data_matrimonios_2010$Ocuhom, 1, 2) == "21", "21", data_matrimonios_2010$Ocuhom)
-
-data_matrimonios_2010$Ocuhom <- ifelse(substr(data_matrimonios_2010$Ocuhom, 1, 2) == "22", "22", data_matrimonios_2010$Ocuhom)
-
-data_matrimonios_2010$Ocuhom <- ifelse(substr(data_matrimonios_2010$Ocuhom, 1, 2) == "23", "23", data_matrimonios_2010$Ocuhom)
-
-data_matrimonios_2010$Ocuhom <-ifelse(substr(data_matrimonios_2010$Ocuhom, 1, 2) == "24", "24", data_matrimonios_2010$Ocuhom)
-
-data_matrimonios_2010$Ocuhom <- ifelse(substr(data_matrimonios_2010$Ocuhom, 1, 2) == "25", "25", data_matrimonios_2010$Ocuhom)
-
-data_matrimonios_2010$Ocuhom <- ifelse(substr(data_matrimonios_2010$Ocuhom, 1, 2) == "26", "26", data_matrimonios_2010$Ocuhom)
-
-data_matrimonios_2010$Ocuhom <- ifelse(substr(data_matrimonios_2010$Ocuhom, 1, 2) == "31", "31", data_matrimonios_2010$Ocuhom)
-
-data_matrimonios_2010$Ocuhom <- ifelse(substr(data_matrimonios_2010$Ocuhom, 1, 2) == "32", "32", data_matrimonios_2010$Ocuhom)
-
-data_matrimonios_2010$Ocuhom <- ifelse(substr(data_matrimonios_2010$Ocuhom, 1, 2) == "33", "33", data_matrimonios_2010$Ocuhom)
-
-data_matrimonios_2010$Ocuhom <- ifelse(substr(data_matrimonios_2010$Ocuhom, 1, 2) == "34", "34", data_matrimonios_2010$Ocuhom)
-
-data_matrimonios_2010$Ocuhom <- ifelse(substr(data_matrimonios_2010$Ocuhom, 1, 2) == "35", "35", data_matrimonios_2010$Ocuhom)
-
-data_matrimonios_2010$Ocuhom <- ifelse(substr(data_matrimonios_2010$Ocuhom, 1, 2) == "41", "41", data_matrimonios_2010$Ocuhom)
-
-data_matrimonios_2010$Ocuhom <- ifelse(substr(data_matrimonios_2010$Ocuhom, 1, 2) == "42", "42", data_matrimonios_2010$Ocuhom)
-
-data_matrimonios_2010$Ocuhom <- ifelse(substr(data_matrimonios_2010$Ocuhom, 1, 2) == "43", "43", data_matrimonios_2010$Ocuhom)
-
-data_matrimonios_2010$Ocuhom <- ifelse(substr(data_matrimonios_2010$Ocuhom, 1, 2) == "44", "44", data_matrimonios_2010$Ocuhom)
-
-data_matrimonios_2010$Ocuhom <- ifelse(substr(data_matrimonios_2010$Ocuhom, 1, 2) == "51", "51", data_matrimonios_2010$Ocuhom)
-
-data_matrimonios_2010$Ocuhom <- ifelse(substr(data_matrimonios_2010$Ocuhom, 1, 2) == "52", "52", data_matrimonios_2010$Ocuhom)
-
-data_matrimonios_2010$Ocuhom <- ifelse(substr(data_matrimonios_2010$Ocuhom, 1, 2) == "53", "51", data_matrimonios_2010$Ocuhom)
-
-data_matrimonios_2010$Ocuhom <- ifelse(substr(data_matrimonios_2010$Ocuhom, 1, 2) == "54", "54", data_matrimonios_2010$Ocuhom)
-
-data_matrimonios_2010$Ocuhom <- ifelse(substr(data_matrimonios_2010$Ocuhom, 1, 2) == "61", "61", data_matrimonios_2010$Ocuhom)
-
-data_matrimonios_2010$Ocuhom <- ifelse(substr(data_matrimonios_2010$Ocuhom, 1, 2) == "62", "62", data_matrimonios_2010$Ocuhom)
-
-data_matrimonios_2010$Ocuhom <- ifelse(substr(data_matrimonios_2010$Ocuhom, 1, 2) == "71", "71", data_matrimonios_2010$Ocuhom)
-
-data_matrimonios_2010$Ocuhom <- ifelse(substr(data_matrimonios_2010$Ocuhom, 1, 2) == "72", "72", data_matrimonios_2010$Ocuhom)
-
-data_matrimonios_2010$Ocuhom <- ifelse(substr(data_matrimonios_2010$Ocuhom, 1, 2) == "73", "73", data_matrimonios_2010$Ocuhom)
-
-data_matrimonios_2010$Ocuhom <- ifelse(substr(data_matrimonios_2010$Ocuhom, 1, 2) == "74", "74", data_matrimonios_2010$Ocuhom)
-
-data_matrimonios_2010$Ocuhom <- ifelse(substr(data_matrimonios_2010$Ocuhom, 1, 2) == "75", "75", data_matrimonios_2010$Ocuhom)
-
-data_matrimonios_2010$Ocuhom <- ifelse(substr(data_matrimonios_2010$Ocuhom, 1, 2) == "81", "81", data_matrimonios_2010$Ocuhom)
-
-data_matrimonios_2010$Ocuhom <- ifelse(substr(data_matrimonios_2010$Ocuhom, 1, 2) == "82", "82", data_matrimonios_2010$Ocuhom)
-
-data_matrimonios_2010$Ocuhom <- ifelse(substr(data_matrimonios_2010$Ocuhom, 1, 2) == "83", "83", data_matrimonios_2010$Ocuhom)
-
-data_matrimonios_2010$Ocuhom <- ifelse(substr(data_matrimonios_2010$Ocuhom, 1, 2) == "91", "91", data_matrimonios_2010$Ocuhom)
-
-data_matrimonios_2010$Ocuhom <- ifelse(substr(data_matrimonios_2010$Ocuhom, 1, 2) == "92", "92", data_matrimonios_2010$Ocuhom)
-
-data_matrimonios_2010$Ocuhom <- ifelse(substr(data_matrimonios_2010$Ocuhom, 1, 2) == "93", "93", data_matrimonios_2010$Ocuhom)
-
-data_matrimonios_2010$Ocuhom <- ifelse(substr(data_matrimonios_2010$Ocuhom, 1, 2) == "94", "94", data_matrimonios_2010$Ocuhom)
-
-data_matrimonios_2010$Ocuhom <- ifelse(substr(data_matrimonios_2010$Ocuhom, 1, 2) == "95", "95", data_matrimonios_2010$Ocuhom)
-
-data_matrimonios_2010$Ocuhom <- ifelse(substr(data_matrimonios_2010$Ocuhom, 1, 2) == "96", "96", data_matrimonios_2010$Ocuhom)
-
-data_matrimonios_2010$Ocuhom <- ifelse(substr(data_matrimonios_2010$Ocuhom, 1, 2) == "97", "NEOG", data_matrimonios_2010$Ocuhom)
-
-data_matrimonios_2010$Ocuhom <- ifelse(substr(data_matrimonios_2010$Ocuhom, 1, 2) == "99", "IGNORADO", data_matrimonios_2010$Ocuhom)
+#View(data_matrimonios_2010)
 ```
 
 
 ```{r}
+categorias <- c("01", "03", "11", "12", "13", "14", "21", "22", "23", "24", "25", "26", "31", "32", "33", "34", "35", "41", "42", "43", "44", "51", "52", "54", "61", "62", "71", "72", "73", "74", "75", "81", "82", "83", "91", "92", "93", "94", "95", "96")
 
-data_matrimonios_2010$Ocumuj <- ifelse(substr(data_matrimonios_2010$Ocumuj, 1, 2) == "01", "01", data_matrimonios_2010$Ocumuj)
+data_matrimonios_2010$Ocuhom <- case_when(
+  substr(data_matrimonios_2010$Ocuhom, 1, 2) %in% categorias ~ substr(data_matrimonios_2010$Ocuhom, 1, 2),
+  substr(data_matrimonios_2010$Ocuhom, 1, 2) == "53" ~ "51",
+  substr(data_matrimonios_2010$Ocuhom, 1, 2) == "97" ~ "NEOG",
+  substr(data_matrimonios_2010$Ocuhom, 1, 2) == "99" ~ "IGNORADO",
+  TRUE ~ data_matrimonios_2010$Ocuhom)
+```
 
-data_matrimonios_2010$Ocumuj <- ifelse(substr(data_matrimonios_2010$Ocumuj, 1, 2) == "03", "03", data_matrimonios_2010$Ocumuj)
-
-data_matrimonios_2010$Ocumuj <- ifelse(substr(data_matrimonios_2010$Ocumuj, 1, 2) == "11", "11", data_matrimonios_2010$Ocumuj)
-
-data_matrimonios_2010$Ocumuj <- ifelse(substr(data_matrimonios_2010$Ocumuj, 1, 2) == "12", "12", data_matrimonios_2010$Ocumuj)
-
-data_matrimonios_2010$Ocumuj <- ifelse(substr(data_matrimonios_2010$Ocumuj, 1, 2) == "13", "13", data_matrimonios_2010$Ocumuj)
-
-data_matrimonios_2010$Ocumuj <- ifelse(substr(data_matrimonios_2010$Ocumuj, 1, 2) == "14", "14", data_matrimonios_2010$Ocumuj)
-
-data_matrimonios_2010$Ocumuj <- ifelse(substr(data_matrimonios_2010$Ocumuj, 1, 2) == "21", "21", data_matrimonios_2010$Ocumuj)
-
-data_matrimonios_2010$Ocumuj <- ifelse(substr(data_matrimonios_2010$Ocumuj, 1, 2) == "22", "22", data_matrimonios_2010$Ocumuj)
-
-data_matrimonios_2010$Ocumuj <- ifelse(substr(data_matrimonios_2010$Ocumuj, 1, 2) == "23", "23", data_matrimonios_2010$Ocumuj)
-
-data_matrimonios_2010$Ocumuj <-ifelse(substr(data_matrimonios_2010$Ocumuj, 1, 2) == "24", "24", data_matrimonios_2010$Ocumuj)
-
-data_matrimonios_2010$Ocumuj <- ifelse(substr(data_matrimonios_2010$Ocumuj, 1, 2) == "25", "25", data_matrimonios_2010$Ocumuj)
-
-data_matrimonios_2010$Ocumuj <- ifelse(substr(data_matrimonios_2010$Ocumuj, 1, 2) == "26", "26", data_matrimonios_2010$Ocumuj)
-
-data_matrimonios_2010$Ocumuj <- ifelse(substr(data_matrimonios_2010$Ocumuj, 1, 2) == "31", "31", data_matrimonios_2010$Ocumuj)
-
-data_matrimonios_2010$Ocumuj <- ifelse(substr(data_matrimonios_2010$Ocumuj, 1, 2) == "32", "32", data_matrimonios_2010$Ocumuj)
-
-data_matrimonios_2010$Ocumuj <- ifelse(substr(data_matrimonios_2010$Ocumuj, 1, 2) == "33", "33", data_matrimonios_2010$Ocumuj)
-
-data_matrimonios_2010$Ocumuj <- ifelse(substr(data_matrimonios_2010$Ocumuj, 1, 2) == "34", "34", data_matrimonios_2010$Ocumuj)
-
-data_matrimonios_2010$Ocumuj <- ifelse(substr(data_matrimonios_2010$Ocumuj, 1, 2) == "35", "35", data_matrimonios_2010$Ocumuj)
-
-data_matrimonios_2010$Ocumuj <- ifelse(substr(data_matrimonios_2010$Ocumuj, 1, 2) == "41", "41", data_matrimonios_2010$Ocumuj)
-
-data_matrimonios_2010$Ocumuj <- ifelse(substr(data_matrimonios_2010$Ocumuj, 1, 2) == "42", "42", data_matrimonios_2010$Ocumuj)
-
-data_matrimonios_2010$Ocumuj <- ifelse(substr(data_matrimonios_2010$Ocumuj, 1, 2) == "43", "43", data_matrimonios_2010$Ocumuj)
-
-data_matrimonios_2010$Ocumuj <- ifelse(substr(data_matrimonios_2010$Ocumuj, 1, 2) == "44", "44", data_matrimonios_2010$Ocumuj)
-
-data_matrimonios_2010$Ocumuj <- ifelse(substr(data_matrimonios_2010$Ocumuj, 1, 2) == "51", "51", data_matrimonios_2010$Ocumuj)
-
-data_matrimonios_2010$Ocumuj <- ifelse(substr(data_matrimonios_2010$Ocumuj, 1, 2) == "52", "52", data_matrimonios_2010$Ocumuj)
-
-data_matrimonios_2010$Ocumuj <- ifelse(substr(data_matrimonios_2010$Ocumuj, 1, 2) == "53", "51", data_matrimonios_2010$Ocumuj)
-
-data_matrimonios_2010$Ocumuj <- ifelse(substr(data_matrimonios_2010$Ocumuj, 1, 2) == "54", "54", data_matrimonios_2010$Ocumuj)
-
-data_matrimonios_2010$Ocumuj <- ifelse(substr(data_matrimonios_2010$Ocumuj, 1, 2) == "61", "61", data_matrimonios_2010$Ocumuj)
-
-data_matrimonios_2010$Ocumuj <- ifelse(substr(data_matrimonios_2010$Ocumuj, 1, 2) == "62", "62", data_matrimonios_2010$Ocumuj)
-
-data_matrimonios_2010$Ocumuj <- ifelse(substr(data_matrimonios_2010$Ocumuj, 1, 2) == "71", "71", data_matrimonios_2010$Ocumuj)
-
-data_matrimonios_2010$Ocumuj <- ifelse(substr(data_matrimonios_2010$Ocumuj, 1, 2) == "72", "72", data_matrimonios_2010$Ocumuj)
-
-data_matrimonios_2010$Ocumuj <- ifelse(substr(data_matrimonios_2010$Ocumuj, 1, 2) == "73", "73", data_matrimonios_2010$Ocumuj)
-
-data_matrimonios_2010$Ocumuj <- ifelse(substr(data_matrimonios_2010$Ocumuj, 1, 2) == "74", "74", data_matrimonios_2010$Ocumuj)
-
-data_matrimonios_2010$Ocumuj <- ifelse(substr(data_matrimonios_2010$Ocumuj, 1, 2) == "75", "75", data_matrimonios_2010$Ocumuj)
-
-data_matrimonios_2010$Ocumuj <- ifelse(substr(data_matrimonios_2010$Ocumuj, 1, 2) == "81", "81", data_matrimonios_2010$Ocumuj)
-
-data_matrimonios_2010$Ocumuj <- ifelse(substr(data_matrimonios_2010$Ocumuj, 1, 2) == "82", "82", data_matrimonios_2010$Ocumuj)
-
-data_matrimonios_2010$Ocumuj <- ifelse(substr(data_matrimonios_2010$Ocumuj, 1, 2) == "83", "83", data_matrimonios_2010$Ocumuj)
-
-data_matrimonios_2010$Ocumuj <- ifelse(substr(data_matrimonios_2010$Ocumuj, 1, 2) == "91", "91", data_matrimonios_2010$Ocumuj)
-
-data_matrimonios_2010$Ocumuj <- ifelse(substr(data_matrimonios_2010$Ocumuj, 1, 2) == "92", "92", data_matrimonios_2010$Ocumuj)
-
-data_matrimonios_2010$Ocumuj <- ifelse(substr(data_matrimonios_2010$Ocumuj, 1, 2) == "93", "93", data_matrimonios_2010$Ocumuj)
-
-data_matrimonios_2010$Ocumuj <- ifelse(substr(data_matrimonios_2010$Ocumuj, 1, 2) == "94", "94", data_matrimonios_2010$Ocumuj)
-
-data_matrimonios_2010$Ocumuj <- ifelse(substr(data_matrimonios_2010$Ocumuj, 1, 2) == "95", "95", data_matrimonios_2010$Ocumuj)
-
-data_matrimonios_2010$Ocumuj <- ifelse(substr(data_matrimonios_2010$Ocumuj, 1, 2) == "96", "96", data_matrimonios_2010$Ocumuj)
-
-data_matrimonios_2010$Ocumuj <- ifelse(substr(data_matrimonios_2010$Ocumuj, 1, 2) == "97", "NEOG", data_matrimonios_2010$Ocumuj)
-
-data_matrimonios_2010$Ocumuj <- ifelse(substr(data_matrimonios_2010$Ocumuj, 1, 2) == "99", "IGNORADO", data_matrimonios_2010$Ocumuj)
+```{r}
+unique(data_matrimonios_2010$Ocuhom)
 ```
 
 
 ```{r}
+categorias <- c("01", "03", "11", "12", "13", "14", "21", "22", "23", "24", "25", "26", "31", "32", "33", "34", "35", "41", "42", "43", "44", "51", "52", "54", "61", "62", "71", "72", "73", "74", "75", "81", "82", "83", "91", "92", "93", "94", "95", "96")
 
-data_matrimonios_2011$Ocuhom <- ifelse(substr(data_matrimonios_2011$Ocuhom, 1, 2) == "01", "01", data_matrimonios_2011$Ocuhom)
+data_matrimonios_2010$Ocumuj <- case_when(
+  substr(data_matrimonios_2010$Ocumuj, 1, 2) %in% categorias ~ substr(data_matrimonios_2010$Ocumuj, 1, 2),
+  substr(data_matrimonios_2010$Ocumuj, 1, 2) == "53" ~ "51",
+  substr(data_matrimonios_2010$Ocumuj, 1, 2) == "97" ~ "NEOG",
+  substr(data_matrimonios_2010$Ocumuj, 1, 2) == "99" ~ "IGNORADO",
+  TRUE ~ data_matrimonios_2010$Ocumuj)
+```
 
-data_matrimonios_2011$Ocuhom <- ifelse(substr(data_matrimonios_2011$Ocuhom, 1, 2) == "03", "03", data_matrimonios_2011$Ocuhom)
-
-data_matrimonios_2011$Ocuhom <- ifelse(substr(data_matrimonios_2011$Ocuhom, 1, 2) == "11", "11", data_matrimonios_2011$Ocuhom)
-
-data_matrimonios_2011$Ocuhom <- ifelse(substr(data_matrimonios_2011$Ocuhom, 1, 2) == "12", "12", data_matrimonios_2011$Ocuhom)
-
-data_matrimonios_2011$Ocuhom <- ifelse(substr(data_matrimonios_2011$Ocuhom, 1, 2) == "13", "13", data_matrimonios_2011$Ocuhom)
-
-data_matrimonios_2011$Ocuhom <- ifelse(substr(data_matrimonios_2011$Ocuhom, 1, 2) == "14", "14", data_matrimonios_2011$Ocuhom)
-
-data_matrimonios_2011$Ocuhom <- ifelse(substr(data_matrimonios_2011$Ocuhom, 1, 2) == "21", "21", data_matrimonios_2011$Ocuhom)
-
-data_matrimonios_2011$Ocuhom <- ifelse(substr(data_matrimonios_2011$Ocuhom, 1, 2) == "22", "22", data_matrimonios_2011$Ocuhom)
-
-data_matrimonios_2011$Ocuhom <- ifelse(substr(data_matrimonios_2011$Ocuhom, 1, 2) == "23", "23", data_matrimonios_2011$Ocuhom)
-
-data_matrimonios_2011$Ocuhom <-ifelse(substr(data_matrimonios_2011$Ocuhom, 1, 2) == "24", "24", data_matrimonios_2011$Ocuhom)
-
-data_matrimonios_2011$Ocuhom <- ifelse(substr(data_matrimonios_2011$Ocuhom, 1, 2) == "25", "25", data_matrimonios_2011$Ocuhom)
-
-data_matrimonios_2011$Ocuhom <- ifelse(substr(data_matrimonios_2011$Ocuhom, 1, 2) == "26", "26", data_matrimonios_2011$Ocuhom)
-
-data_matrimonios_2011$Ocuhom <- ifelse(substr(data_matrimonios_2011$Ocuhom, 1, 2) == "31", "31", data_matrimonios_2011$Ocuhom)
-
-data_matrimonios_2011$Ocuhom <- ifelse(substr(data_matrimonios_2011$Ocuhom, 1, 2) == "32", "32", data_matrimonios_2011$Ocuhom)
-
-data_matrimonios_2011$Ocuhom <- ifelse(substr(data_matrimonios_2011$Ocuhom, 1, 2) == "33", "33", data_matrimonios_2011$Ocuhom)
-
-data_matrimonios_2011$Ocuhom <- ifelse(substr(data_matrimonios_2011$Ocuhom, 1, 2) == "34", "34", data_matrimonios_2011$Ocuhom)
-
-data_matrimonios_2011$Ocuhom <- ifelse(substr(data_matrimonios_2011$Ocuhom, 1, 2) == "35", "35", data_matrimonios_2011$Ocuhom)
-
-data_matrimonios_2011$Ocuhom <- ifelse(substr(data_matrimonios_2011$Ocuhom, 1, 2) == "41", "41", data_matrimonios_2011$Ocuhom)
-
-data_matrimonios_2011$Ocuhom <- ifelse(substr(data_matrimonios_2011$Ocuhom, 1, 2) == "42", "42", data_matrimonios_2011$Ocuhom)
-
-data_matrimonios_2011$Ocuhom <- ifelse(substr(data_matrimonios_2011$Ocuhom, 1, 2) == "43", "43", data_matrimonios_2011$Ocuhom)
-
-data_matrimonios_2011$Ocuhom <- ifelse(substr(data_matrimonios_2011$Ocuhom, 1, 2) == "44", "44", data_matrimonios_2011$Ocuhom)
-
-data_matrimonios_2011$Ocuhom <- ifelse(substr(data_matrimonios_2011$Ocuhom, 1, 2) == "51", "51", data_matrimonios_2011$Ocuhom)
-
-data_matrimonios_2011$Ocuhom <- ifelse(substr(data_matrimonios_2011$Ocuhom, 1, 2) == "52", "52", data_matrimonios_2011$Ocuhom)
-
-data_matrimonios_2011$Ocuhom <- ifelse(substr(data_matrimonios_2011$Ocuhom, 1, 2) == "54", "54", data_matrimonios_2011$Ocuhom)
-
-data_matrimonios_2011$Ocuhom <- ifelse(substr(data_matrimonios_2011$Ocuhom, 1, 2) == "61", "61", data_matrimonios_2011$Ocuhom)
-
-data_matrimonios_2011$Ocuhom <- ifelse(substr(data_matrimonios_2011$Ocuhom, 1, 2) == "62", "62", data_matrimonios_2011$Ocuhom)
-
-data_matrimonios_2011$Ocuhom <- ifelse(substr(data_matrimonios_2011$Ocuhom, 1, 2) == "71", "71", data_matrimonios_2011$Ocuhom)
-
-data_matrimonios_2011$Ocuhom <- ifelse(substr(data_matrimonios_2011$Ocuhom, 1, 2) == "72", "72", data_matrimonios_2011$Ocuhom)
-
-data_matrimonios_2011$Ocuhom <- ifelse(substr(data_matrimonios_2011$Ocuhom, 1, 2) == "73", "73", data_matrimonios_2011$Ocuhom)
-
-data_matrimonios_2011$Ocuhom <- ifelse(substr(data_matrimonios_2011$Ocuhom, 1, 2) == "74", "74", data_matrimonios_2011$Ocuhom)
-
-data_matrimonios_2011$Ocuhom <- ifelse(substr(data_matrimonios_2011$Ocuhom, 1, 2) == "75", "75", data_matrimonios_2011$Ocuhom)
-
-data_matrimonios_2011$Ocuhom <- ifelse(substr(data_matrimonios_2011$Ocuhom, 1, 2) == "81", "81", data_matrimonios_2011$Ocuhom)
-
-data_matrimonios_2011$Ocuhom <- ifelse(substr(data_matrimonios_2011$Ocuhom, 1, 2) == "82", "82", data_matrimonios_2011$Ocuhom)
-
-data_matrimonios_2011$Ocuhom <- ifelse(substr(data_matrimonios_2011$Ocuhom, 1, 2) == "83", "83", data_matrimonios_2011$Ocuhom)
-
-data_matrimonios_2011$Ocuhom <- ifelse(substr(data_matrimonios_2011$Ocuhom, 1, 2) == "91", "91", data_matrimonios_2011$Ocuhom)
-
-data_matrimonios_2011$Ocuhom <- ifelse(substr(data_matrimonios_2011$Ocuhom, 1, 2) == "92", "92", data_matrimonios_2011$Ocuhom)
-
-data_matrimonios_2011$Ocuhom <- ifelse(substr(data_matrimonios_2011$Ocuhom, 1, 2) == "93", "93", data_matrimonios_2011$Ocuhom)
-
-data_matrimonios_2011$Ocuhom <- ifelse(substr(data_matrimonios_2011$Ocuhom, 1, 2) == "94", "94", data_matrimonios_2011$Ocuhom)
-
-data_matrimonios_2011$Ocuhom <- ifelse(substr(data_matrimonios_2011$Ocuhom, 1, 2) == "95", "95", data_matrimonios_2011$Ocuhom)
-
-data_matrimonios_2011$Ocuhom <- ifelse(substr(data_matrimonios_2011$Ocuhom, 1, 2) == "96", "96", data_matrimonios_2011$Ocuhom)
-
-data_matrimonios_2011$Ocuhom <- ifelse(substr(data_matrimonios_2011$Ocuhom, 1, 2) == "97", "NEOG", data_matrimonios_2011$Ocuhom)
-
-data_matrimonios_2011$Ocuhom <- ifelse(substr(data_matrimonios_2011$Ocuhom, 1, 2) == "99", "IGNORADO", data_matrimonios_2011$Ocuhom)
+```{r}
+unique(data_matrimonios_2010$Ocumuj)
+#View(data_matrimonios_2010)
 ```
 
 
 ```{r}
+categorias <- c("01", "03", "11", "12", "13", "14", "21", "22", "23", "24", "25", "26", "31", "32", "33", "34", "35", "41", "42", "43", "44", "51", "52", "54", "61", "62", "71", "72", "73", "74", "75", "81", "82", "83", "91", "92", "93", "94", "95", "96")
 
-data_matrimonios_2011$Ocumuj <- ifelse(substr(data_matrimonios_2011$Ocumuj, 1, 2) == "01", "01", data_matrimonios_2011$Ocumuj)
+data_matrimonios_2011$Ocuhom <- case_when(
+  substr(data_matrimonios_2011$Ocuhom, 1, 2) %in% categorias ~ substr(data_matrimonios_2011$Ocuhom, 1, 2),
+  substr(data_matrimonios_2011$Ocuhom, 1, 2) == "97" ~ "NEOG",
+  substr(data_matrimonios_2011$Ocuhom, 1, 2) == "99" ~ "IGNORADO",
+  TRUE ~ data_matrimonios_2011$Ocuhom)
+```
 
-data_matrimonios_2011$Ocumuj <- ifelse(substr(data_matrimonios_2011$Ocumuj, 1, 2) == "03", "03", data_matrimonios_2011$Ocumuj)
-
-data_matrimonios_2011$Ocumuj <- ifelse(substr(data_matrimonios_2011$Ocumuj, 1, 2) == "05", "NEOG", data_matrimonios_2011$Ocumuj)
-
-data_matrimonios_2011$Ocumuj <- ifelse(substr(data_matrimonios_2011$Ocumuj, 1, 2) == "11", "11", data_matrimonios_2011$Ocumuj)
-
-data_matrimonios_2011$Ocumuj <- ifelse(substr(data_matrimonios_2011$Ocumuj, 1, 2) == "12", "12", data_matrimonios_2011$Ocumuj)
-
-data_matrimonios_2011$Ocumuj <- ifelse(substr(data_matrimonios_2011$Ocumuj, 1, 2) == "13", "13", data_matrimonios_2011$Ocumuj)
-
-data_matrimonios_2011$Ocumuj <- ifelse(substr(data_matrimonios_2011$Ocumuj, 1, 2) == "14", "14", data_matrimonios_2011$Ocumuj)
-
-data_matrimonios_2011$Ocumuj <- ifelse(substr(data_matrimonios_2011$Ocumuj, 1, 2) == "21", "21", data_matrimonios_2011$Ocumuj)
-
-data_matrimonios_2011$Ocumuj <- ifelse(substr(data_matrimonios_2011$Ocumuj, 1, 2) == "22", "22", data_matrimonios_2011$Ocumuj)
-
-data_matrimonios_2011$Ocumuj <- ifelse(substr(data_matrimonios_2011$Ocumuj, 1, 2) == "23", "23", data_matrimonios_2011$Ocumuj)
-
-data_matrimonios_2011$Ocumuj <-ifelse(substr(data_matrimonios_2011$Ocumuj, 1, 2) == "24", "24", data_matrimonios_2011$Ocumuj)
-
-data_matrimonios_2011$Ocumuj <- ifelse(substr(data_matrimonios_2011$Ocumuj, 1, 2) == "25", "25", data_matrimonios_2011$Ocumuj)
-
-data_matrimonios_2011$Ocumuj <- ifelse(substr(data_matrimonios_2011$Ocumuj, 1, 2) == "26", "26", data_matrimonios_2011$Ocumuj)
-
-data_matrimonios_2011$Ocumuj <- ifelse(substr(data_matrimonios_2011$Ocumuj, 1, 2) == "31", "31", data_matrimonios_2011$Ocumuj)
-
-data_matrimonios_2011$Ocumuj <- ifelse(substr(data_matrimonios_2011$Ocumuj, 1, 2) == "32", "32", data_matrimonios_2011$Ocumuj)
-
-data_matrimonios_2011$Ocumuj <- ifelse(substr(data_matrimonios_2011$Ocumuj, 1, 2) == "33", "33", data_matrimonios_2011$Ocumuj)
-
-data_matrimonios_2011$Ocumuj <- ifelse(substr(data_matrimonios_2011$Ocumuj, 1, 2) == "34", "34", data_matrimonios_2011$Ocumuj)
-
-data_matrimonios_2011$Ocumuj <- ifelse(substr(data_matrimonios_2011$Ocumuj, 1, 2) == "35", "35", data_matrimonios_2011$Ocumuj)
-
-data_matrimonios_2011$Ocumuj <- ifelse(substr(data_matrimonios_2011$Ocumuj, 1, 2) == "41", "41", data_matrimonios_2011$Ocumuj)
-
-data_matrimonios_2011$Ocumuj <- ifelse(substr(data_matrimonios_2011$Ocumuj, 1, 2) == "42", "42", data_matrimonios_2011$Ocumuj)
-
-data_matrimonios_2011$Ocumuj <- ifelse(substr(data_matrimonios_2011$Ocumuj, 1, 2) == "43", "43", data_matrimonios_2011$Ocumuj)
-
-data_matrimonios_2011$Ocumuj <- ifelse(substr(data_matrimonios_2011$Ocumuj, 1, 2) == "44", "44", data_matrimonios_2011$Ocumuj)
-
-data_matrimonios_2011$Ocumuj <- ifelse(substr(data_matrimonios_2011$Ocumuj, 1, 2) == "51", "51", data_matrimonios_2011$Ocumuj)
-
-data_matrimonios_2011$Ocumuj <- ifelse(substr(data_matrimonios_2011$Ocumuj, 1, 2) == "52", "52", data_matrimonios_2011$Ocumuj)
-
-data_matrimonios_2011$Ocumuj <- ifelse(substr(data_matrimonios_2011$Ocumuj, 1, 2) == "53", "51", data_matrimonios_2011$Ocumuj)
-
-data_matrimonios_2011$Ocumuj <- ifelse(substr(data_matrimonios_2011$Ocumuj, 1, 2) == "54", "54", data_matrimonios_2011$Ocumuj)
-
-data_matrimonios_2011$Ocumuj <- ifelse(substr(data_matrimonios_2011$Ocumuj, 1, 2) == "61", "61", data_matrimonios_2011$Ocumuj)
-
-data_matrimonios_2011$Ocumuj <- ifelse(substr(data_matrimonios_2011$Ocumuj, 1, 2) == "62", "62", data_matrimonios_2011$Ocumuj)
-
-data_matrimonios_2011$Ocumuj <- ifelse(substr(data_matrimonios_2011$Ocumuj, 1, 2) == "71", "71", data_matrimonios_2011$Ocumuj)
-
-data_matrimonios_2011$Ocumuj <- ifelse(substr(data_matrimonios_2011$Ocumuj, 1, 2) == "72", "72", data_matrimonios_2011$Ocumuj)
-
-data_matrimonios_2011$Ocumuj <- ifelse(substr(data_matrimonios_2011$Ocumuj, 1, 2) == "73", "73", data_matrimonios_2011$Ocumuj)
-
-data_matrimonios_2011$Ocumuj <- ifelse(substr(data_matrimonios_2011$Ocumuj, 1, 2) == "74", "74", data_matrimonios_2011$Ocumuj)
-
-data_matrimonios_2011$Ocumuj <- ifelse(substr(data_matrimonios_2011$Ocumuj, 1, 2) == "75", "75", data_matrimonios_2011$Ocumuj)
-
-data_matrimonios_2011$Ocumuj <- ifelse(substr(data_matrimonios_2011$Ocumuj, 1, 2) == "81", "81", data_matrimonios_2011$Ocumuj)
-
-data_matrimonios_2011$Ocumuj <- ifelse(substr(data_matrimonios_2011$Ocumuj, 1, 2) == "82", "82", data_matrimonios_2011$Ocumuj)
-
-data_matrimonios_2011$Ocumuj <- ifelse(substr(data_matrimonios_2011$Ocumuj, 1, 2) == "83", "83", data_matrimonios_2011$Ocumuj)
-
-data_matrimonios_2011$Ocumuj <- ifelse(substr(data_matrimonios_2011$Ocumuj, 1, 2) == "91", "91", data_matrimonios_2011$Ocumuj)
-
-data_matrimonios_2011$Ocumuj <- ifelse(substr(data_matrimonios_2011$Ocumuj, 1, 2) == "92", "92", data_matrimonios_2011$Ocumuj)
-
-data_matrimonios_2011$Ocumuj <- ifelse(substr(data_matrimonios_2011$Ocumuj, 1, 2) == "93", "93", data_matrimonios_2011$Ocumuj)
-
-data_matrimonios_2011$Ocumuj <- ifelse(substr(data_matrimonios_2011$Ocumuj, 1, 2) == "94", "94", data_matrimonios_2011$Ocumuj)
-
-data_matrimonios_2011$Ocumuj <- ifelse(substr(data_matrimonios_2011$Ocumuj, 1, 2) == "95", "95", data_matrimonios_2011$Ocumuj)
-
-data_matrimonios_2011$Ocumuj <- ifelse(substr(data_matrimonios_2011$Ocumuj, 1, 2) == "96", "96", data_matrimonios_2011$Ocumuj)
-
-data_matrimonios_2011$Ocumuj <- ifelse(substr(data_matrimonios_2011$Ocumuj, 1, 2) == "97", "NEOG", data_matrimonios_2011$Ocumuj)
-
-data_matrimonios_2011$Ocumuj <- ifelse(substr(data_matrimonios_2011$Ocumuj, 1, 2) == "99", "IGNORADO", data_matrimonios_2011$Ocumuj)
+```{r}
+unique(data_matrimonios_2011$Ocuhom)
+#View(data_matrimonios_2010)
 ```
 
 
 ```{r}
+categorias <- c("01", "03", "11", "12", "13", "14", "21", "22", "23", "24", "25", "26", "31", "32", "33", "34", "35", "41", "42", "43", "44", "51", "52", "54", "61", "62", "71", "72", "73", "74", "75", "81", "82", "83", "91", "92", "93", "94", "95", "96")
 
-data_matrimonios_2012$OCUHOM <- ifelse(substr(data_matrimonios_2012$OCUHOM, 1, 2) == "01", "01", data_matrimonios_2012$OCUHOM)
+data_matrimonios_2011$Ocumuj <- case_when(
+  substr(data_matrimonios_2011$Ocumuj, 1, 2) %in% categorias ~ substr(data_matrimonios_2011$Ocumuj, 1, 2),
+  substr(data_matrimonios_2011$Ocumuj, 1, 2) == "05" ~ "NEOG",
+  substr(data_matrimonios_2011$Ocumuj, 1, 2) == "53" ~ "51",
+  substr(data_matrimonios_2011$Ocumuj, 1, 2) == "97" ~ "NEOG",
+  substr(data_matrimonios_2011$Ocumuj, 1, 2) == "99" ~ "IGNORADO",
+  TRUE ~ data_matrimonios_2011$Ocumuj)
+```
 
-data_matrimonios_2012$OCUHOM <- ifelse(substr(data_matrimonios_2012$OCUHOM, 1, 2) == "03", "03", data_matrimonios_2012$OCUHOM)
-
-data_matrimonios_2012$OCUHOM <- ifelse(substr(data_matrimonios_2012$OCUHOM, 1, 2) == "11", "11", data_matrimonios_2012$OCUHOM)
-
-data_matrimonios_2012$OCUHOM <- ifelse(substr(data_matrimonios_2012$OCUHOM, 1, 2) == "12", "12", data_matrimonios_2012$OCUHOM)
-
-data_matrimonios_2012$OCUHOM <- ifelse(substr(data_matrimonios_2012$OCUHOM, 1, 2) == "13", "13", data_matrimonios_2012$OCUHOM)
-
-data_matrimonios_2012$OCUHOM <- ifelse(substr(data_matrimonios_2012$OCUHOM, 1, 2) == "14", "14", data_matrimonios_2012$OCUHOM)
-
-data_matrimonios_2012$OCUHOM <- ifelse(substr(data_matrimonios_2012$OCUHOM, 1, 2) == "21", "21", data_matrimonios_2012$OCUHOM)
-
-data_matrimonios_2012$OCUHOM <- ifelse(substr(data_matrimonios_2012$OCUHOM, 1, 2) == "22", "22", data_matrimonios_2012$OCUHOM)
-
-data_matrimonios_2012$OCUHOM <- ifelse(substr(data_matrimonios_2012$OCUHOM, 1, 2) == "23", "23", data_matrimonios_2012$OCUHOM)
-
-data_matrimonios_2012$OCUHOM <-ifelse(substr(data_matrimonios_2012$OCUHOM, 1, 2) == "24", "24", data_matrimonios_2012$OCUHOM)
-
-data_matrimonios_2012$OCUHOM <- ifelse(substr(data_matrimonios_2012$OCUHOM, 1, 2) == "25", "25", data_matrimonios_2012$OCUHOM)
-
-data_matrimonios_2012$OCUHOM <- ifelse(substr(data_matrimonios_2012$OCUHOM, 1, 2) == "26", "26", data_matrimonios_2012$OCUHOM)
-
-data_matrimonios_2012$OCUHOM <- ifelse(substr(data_matrimonios_2012$OCUHOM, 1, 2) == "29", "NEOG", data_matrimonios_2012$OCUHOM)
-
-
-data_matrimonios_2012$OCUHOM <- ifelse(substr(data_matrimonios_2012$OCUHOM, 1, 2) == "31", "31", data_matrimonios_2012$OCUHOM)
-
-data_matrimonios_2012$OCUHOM <- ifelse(substr(data_matrimonios_2012$OCUHOM, 1, 2) == "32", "32", data_matrimonios_2012$OCUHOM)
-
-data_matrimonios_2012$OCUHOM <- ifelse(substr(data_matrimonios_2012$OCUHOM, 1, 2) == "33", "33", data_matrimonios_2012$OCUHOM)
-
-data_matrimonios_2012$OCUHOM <- ifelse(substr(data_matrimonios_2012$OCUHOM, 1, 2) == "34", "34", data_matrimonios_2012$OCUHOM)
-
-data_matrimonios_2012$OCUHOM <- ifelse(substr(data_matrimonios_2012$OCUHOM, 1, 2) == "35", "35", data_matrimonios_2012$OCUHOM)
-
-data_matrimonios_2012$OCUHOM <- ifelse(substr(data_matrimonios_2012$OCUHOM, 1, 2) == "41", "41", data_matrimonios_2012$OCUHOM)
-
-data_matrimonios_2012$OCUHOM <- ifelse(substr(data_matrimonios_2012$OCUHOM, 1, 2) == "42", "42", data_matrimonios_2012$OCUHOM)
-
-data_matrimonios_2012$OCUHOM <- ifelse(substr(data_matrimonios_2012$OCUHOM, 1, 2) == "43", "43", data_matrimonios_2012$OCUHOM)
-
-data_matrimonios_2012$OCUHOM <- ifelse(substr(data_matrimonios_2012$OCUHOM, 1, 2) == "44", "44", data_matrimonios_2012$OCUHOM)
-
-data_matrimonios_2012$OCUHOM <- ifelse(substr(data_matrimonios_2012$OCUHOM, 1, 2) == "51", "51", data_matrimonios_2012$OCUHOM)
-
-data_matrimonios_2012$OCUHOM <- ifelse(substr(data_matrimonios_2012$OCUHOM, 1, 2) == "52", "52", data_matrimonios_2012$OCUHOM)
-
-data_matrimonios_2012$OCUHOM <- ifelse(substr(data_matrimonios_2012$OCUHOM, 1, 2) == "54", "54", data_matrimonios_2012$OCUHOM)
-
-data_matrimonios_2012$OCUHOM <- ifelse(substr(data_matrimonios_2012$OCUHOM, 1, 2) == "61", "61", data_matrimonios_2012$OCUHOM)
-
-data_matrimonios_2012$OCUHOM <- ifelse(substr(data_matrimonios_2012$OCUHOM, 1, 2) == "62", "62", data_matrimonios_2012$OCUHOM)
-
-data_matrimonios_2012$OCUHOM <- ifelse(substr(data_matrimonios_2012$OCUHOM, 1, 2) == "71", "71", data_matrimonios_2012$OCUHOM)
-
-data_matrimonios_2012$OCUHOM <- ifelse(substr(data_matrimonios_2012$OCUHOM, 1, 2) == "72", "72", data_matrimonios_2012$OCUHOM)
-
-data_matrimonios_2012$OCUHOM <- ifelse(substr(data_matrimonios_2012$OCUHOM, 1, 2) == "73", "73", data_matrimonios_2012$OCUHOM)
-
-data_matrimonios_2012$OCUHOM <- ifelse(substr(data_matrimonios_2012$OCUHOM, 1, 2) == "74", "74", data_matrimonios_2012$OCUHOM)
-
-data_matrimonios_2012$OCUHOM <- ifelse(substr(data_matrimonios_2012$OCUHOM, 1, 2) == "75", "75", data_matrimonios_2012$OCUHOM)
-
-data_matrimonios_2012$OCUHOM <- ifelse(substr(data_matrimonios_2012$OCUHOM, 1, 2) == "76", "NEOG", data_matrimonios_2012$OCUHOM)
-
-data_matrimonios_2012$OCUHOM <- ifelse(substr(data_matrimonios_2012$OCUHOM, 1, 2) == "81", "81", data_matrimonios_2012$OCUHOM)
-
-data_matrimonios_2012$OCUHOM <- ifelse(substr(data_matrimonios_2012$OCUHOM, 1, 2) == "82", "82", data_matrimonios_2012$OCUHOM)
-
-data_matrimonios_2012$OCUHOM <- ifelse(substr(data_matrimonios_2012$OCUHOM, 1, 2) == "83", "83", data_matrimonios_2012$OCUHOM)
-
-data_matrimonios_2012$OCUHOM <- ifelse(substr(data_matrimonios_2012$OCUHOM, 1, 2) == "91", "91", data_matrimonios_2012$OCUHOM)
-
-data_matrimonios_2012$OCUHOM <- ifelse(substr(data_matrimonios_2012$OCUHOM, 1, 2) == "92", "92", data_matrimonios_2012$OCUHOM)
-
-data_matrimonios_2012$OCUHOM <- ifelse(substr(data_matrimonios_2012$OCUHOM, 1, 2) == "93", "93", data_matrimonios_2012$OCUHOM)
-
-data_matrimonios_2012$OCUHOM <- ifelse(substr(data_matrimonios_2012$OCUHOM, 1, 2) == "94", "94", data_matrimonios_2012$OCUHOM)
-
-data_matrimonios_2012$OCUHOM <- ifelse(substr(data_matrimonios_2012$OCUHOM, 1, 2) == "95", "95", data_matrimonios_2012$OCUHOM)
-
-data_matrimonios_2012$OCUHOM <- ifelse(substr(data_matrimonios_2012$OCUHOM, 1, 2) == "96", "96", data_matrimonios_2012$OCUHOM)
-
-data_matrimonios_2012$OCUHOM <- ifelse(substr(data_matrimonios_2012$OCUHOM, 1, 2) == "97", "NEOG", data_matrimonios_2012$OCUHOM)
-
-data_matrimonios_2012$OCUHOM <- ifelse(substr(data_matrimonios_2012$OCUHOM, 1, 2) == "99", "IGNORADO", data_matrimonios_2012$OCUHOM)
-
+```{r}
+unique(data_matrimonios_2011$Ocumuj)
+#View(data_matrimonios_2010)
 ```
 
 
 ```{r}
+categorias <- c("01", "03", "11", "12", "13", "14", "21", "22", "23", "24", "25", "26", "31", "32", "33", "34", "35", "41", "42", "43", "44", "51", "52", "54", "61", "62", "71", "72", "73", "74", "75", "81", "82", "83", "91", "92", "93", "94", "95", "96")
 
-data_matrimonios_2012$OCUMUJ <- ifelse(substr(data_matrimonios_2012$OCUMUJ, 1, 2) == "01", "01", data_matrimonios_2012$OCUMUJ)
+data_matrimonios_2012$OCUHOM <- case_when(
+  substr(data_matrimonios_2012$OCUHOM, 1, 2) %in% categorias ~ substr(data_matrimonios_2012$OCUHOM, 1, 2),
+  substr(data_matrimonios_2012$OCUHOM, 1, 2) == "29" ~ "NEOG",
+  substr(data_matrimonios_2012$OCUHOM, 1, 2) == "76" ~ "NEOG",
+  substr(data_matrimonios_2012$OCUHOM, 1, 2) == "97" ~ "NEOG",
+  substr(data_matrimonios_2012$OCUHOM, 1, 2) == "99" ~ "IGNORADO",
+  TRUE ~ data_matrimonios_2012$OCUHOM)
+```
 
-data_matrimonios_2012$OCUMUJ <- ifelse(substr(data_matrimonios_2012$OCUMUJ, 1, 2) == "03", "03", data_matrimonios_2012$OCUMUJ)
-
-data_matrimonios_2012$OCUMUJ <- ifelse(substr(data_matrimonios_2012$OCUMUJ, 1, 2) == "11", "11", data_matrimonios_2012$OCUMUJ)
-
-data_matrimonios_2012$OCUMUJ <- ifelse(substr(data_matrimonios_2012$OCUMUJ, 1, 2) == "12", "12", data_matrimonios_2012$OCUMUJ)
-
-data_matrimonios_2012$OCUMUJ <- ifelse(substr(data_matrimonios_2012$OCUMUJ, 1, 2) == "13", "13", data_matrimonios_2012$OCUMUJ)
-
-data_matrimonios_2012$OCUMUJ <- ifelse(substr(data_matrimonios_2012$OCUMUJ, 1, 2) == "14", "14", data_matrimonios_2012$OCUMUJ)
-
-data_matrimonios_2012$OCUMUJ <- ifelse(substr(data_matrimonios_2012$OCUMUJ, 1, 2) == "21", "21", data_matrimonios_2012$OCUMUJ)
-
-data_matrimonios_2012$OCUMUJ <- ifelse(substr(data_matrimonios_2012$OCUMUJ, 1, 2) == "22", "22", data_matrimonios_2012$OCUMUJ)
-
-data_matrimonios_2012$OCUMUJ <- ifelse(substr(data_matrimonios_2012$OCUMUJ, 1, 2) == "23", "23", data_matrimonios_2012$OCUMUJ)
-
-data_matrimonios_2012$OCUMUJ <-ifelse(substr(data_matrimonios_2012$OCUMUJ, 1, 2) == "24", "24", data_matrimonios_2012$OCUMUJ)
-
-data_matrimonios_2012$OCUMUJ <- ifelse(substr(data_matrimonios_2012$OCUMUJ, 1, 2) == "25", "25", data_matrimonios_2012$OCUMUJ)
-
-data_matrimonios_2012$OCUMUJ <- ifelse(substr(data_matrimonios_2012$OCUMUJ, 1, 2) == "26", "26", data_matrimonios_2012$OCUMUJ)
-
-data_matrimonios_2012$OCUMUJ <- ifelse(substr(data_matrimonios_2012$OCUMUJ, 1, 2) == "29", "NEOG", data_matrimonios_2012$OCUMUJ)
+```{r}
+unique(data_matrimonios_2012$OCUHOM)
+```
 
 
-data_matrimonios_2012$OCUMUJ <- ifelse(substr(data_matrimonios_2012$OCUMUJ, 1, 2) == "31", "31", data_matrimonios_2012$OCUMUJ)
+```{r}
+categorias <- c("01", "03", "11", "12", "13", "14", "21", "22", "23", "24", "25", "26", "31", "32", "33", "34", "35", "41", "42", "43", "44", "51", "52", "54", "61", "62", "71", "72", "73", "74", "75", "81", "82", "83", "91", "92", "93", "94", "95", "96")
 
-data_matrimonios_2012$OCUMUJ <- ifelse(substr(data_matrimonios_2012$OCUMUJ, 1, 2) == "32", "32", data_matrimonios_2012$OCUMUJ)
+data_matrimonios_2012$OCUMUJ <- case_when(
+  substr(data_matrimonios_2012$OCUMUJ, 1, 2) %in% categorias ~ substr(data_matrimonios_2012$OCUMUJ, 1, 2),
+  substr(data_matrimonios_2012$OCUMUJ, 1, 2) == "53" ~ "51",
+  substr(data_matrimonios_2012$OCUMUJ, 1, 2) == "97" ~ "NEOG",
+  substr(data_matrimonios_2012$OCUMUJ, 1, 2) == "99" ~ "IGNORADO",
+  TRUE ~ data_matrimonios_2012$OCUMUJ)
+```
 
-data_matrimonios_2012$OCUMUJ <- ifelse(substr(data_matrimonios_2012$OCUMUJ, 1, 2) == "33", "33", data_matrimonios_2012$OCUMUJ)
-
-data_matrimonios_2012$OCUMUJ <- ifelse(substr(data_matrimonios_2012$OCUMUJ, 1, 2) == "34", "34", data_matrimonios_2012$OCUMUJ)
-
-data_matrimonios_2012$OCUMUJ <- ifelse(substr(data_matrimonios_2012$OCUMUJ, 1, 2) == "35", "35", data_matrimonios_2012$OCUMUJ)
-
-data_matrimonios_2012$OCUMUJ <- ifelse(substr(data_matrimonios_2012$OCUMUJ, 1, 2) == "41", "41", data_matrimonios_2012$OCUMUJ)
-
-data_matrimonios_2012$OCUMUJ <- ifelse(substr(data_matrimonios_2012$OCUMUJ, 1, 2) == "42", "42", data_matrimonios_2012$OCUMUJ)
-
-data_matrimonios_2012$OCUMUJ <- ifelse(substr(data_matrimonios_2012$OCUMUJ, 1, 2) == "43", "43", data_matrimonios_2012$OCUMUJ)
-
-data_matrimonios_2012$OCUMUJ <- ifelse(substr(data_matrimonios_2012$OCUMUJ, 1, 2) == "44", "44", data_matrimonios_2012$OCUMUJ)
-
-data_matrimonios_2012$OCUMUJ <- ifelse(substr(data_matrimonios_2012$OCUMUJ, 1, 2) == "51", "51", data_matrimonios_2012$OCUMUJ)
-
-data_matrimonios_2012$OCUMUJ <- ifelse(substr(data_matrimonios_2012$OCUMUJ, 1, 2) == "52", "52", data_matrimonios_2012$OCUMUJ)
-
-data_matrimonios_2012$OCUMUJ <- ifelse(substr(data_matrimonios_2012$OCUMUJ, 1, 2) == "53", "51", data_matrimonios_2012$OCUMUJ)
-
-data_matrimonios_2012$OCUMUJ <- ifelse(substr(data_matrimonios_2012$OCUMUJ, 1, 2) == "54", "54", data_matrimonios_2012$OCUMUJ)
-
-data_matrimonios_2012$OCUMUJ <- ifelse(substr(data_matrimonios_2012$OCUMUJ, 1, 2) == "61", "61", data_matrimonios_2012$OCUMUJ)
-
-data_matrimonios_2012$OCUMUJ <- ifelse(substr(data_matrimonios_2012$OCUMUJ, 1, 2) == "62", "62", data_matrimonios_2012$OCUMUJ)
-
-data_matrimonios_2012$OCUMUJ <- ifelse(substr(data_matrimonios_2012$OCUMUJ, 1, 2) == "71", "71", data_matrimonios_2012$OCUMUJ)
-
-data_matrimonios_2012$OCUMUJ <- ifelse(substr(data_matrimonios_2012$OCUMUJ, 1, 2) == "72", "72", data_matrimonios_2012$OCUMUJ)
-
-data_matrimonios_2012$OCUMUJ <- ifelse(substr(data_matrimonios_2012$OCUMUJ, 1, 2) == "73", "73", data_matrimonios_2012$OCUMUJ)
-
-data_matrimonios_2012$OCUMUJ <- ifelse(substr(data_matrimonios_2012$OCUMUJ, 1, 2) == "74", "74", data_matrimonios_2012$OCUMUJ)
-
-data_matrimonios_2012$OCUMUJ <- ifelse(substr(data_matrimonios_2012$OCUMUJ, 1, 2) == "75", "75", data_matrimonios_2012$OCUMUJ)
-
-data_matrimonios_2012$OCUMUJ <- ifelse(substr(data_matrimonios_2012$OCUMUJ, 1, 2) == "76", "NEOG", data_matrimonios_2012$OCUMUJ)
-
-data_matrimonios_2012$OCUMUJ <- ifelse(substr(data_matrimonios_2012$OCUMUJ, 1, 2) == "81", "81", data_matrimonios_2012$OCUMUJ)
-
-data_matrimonios_2012$OCUMUJ <- ifelse(substr(data_matrimonios_2012$OCUMUJ, 1, 2) == "82", "82", data_matrimonios_2012$OCUMUJ)
-
-data_matrimonios_2012$OCUMUJ <- ifelse(substr(data_matrimonios_2012$OCUMUJ, 1, 2) == "83", "83", data_matrimonios_2012$OCUMUJ)
-
-data_matrimonios_2012$OCUMUJ <- ifelse(substr(data_matrimonios_2012$OCUMUJ, 1, 2) == "91", "91", data_matrimonios_2012$OCUMUJ)
-
-data_matrimonios_2012$OCUMUJ <- ifelse(substr(data_matrimonios_2012$OCUMUJ, 1, 2) == "92", "92", data_matrimonios_2012$OCUMUJ)
-
-data_matrimonios_2012$OCUMUJ <- ifelse(substr(data_matrimonios_2012$OCUMUJ, 1, 2) == "93", "93", data_matrimonios_2012$OCUMUJ)
-
-data_matrimonios_2012$OCUMUJ <- ifelse(substr(data_matrimonios_2012$OCUMUJ, 1, 2) == "94", "94", data_matrimonios_2012$OCUMUJ)
-
-data_matrimonios_2012$OCUMUJ <- ifelse(substr(data_matrimonios_2012$OCUMUJ, 1, 2) == "95", "95", data_matrimonios_2012$OCUMUJ)
-
-data_matrimonios_2012$OCUMUJ <- ifelse(substr(data_matrimonios_2012$OCUMUJ, 1, 2) == "96", "96", data_matrimonios_2012$OCUMUJ)
-
-data_matrimonios_2012$OCUMUJ <- ifelse(substr(data_matrimonios_2012$OCUMUJ, 1, 2) == "97", "NEOG", data_matrimonios_2012$OCUMUJ)
-
-data_matrimonios_2012$OCUMUJ <- ifelse(substr(data_matrimonios_2012$OCUMUJ, 1, 2) == "99", "IGNORADO", data_matrimonios_2012$OCUMUJ)
+```{r}
+unique(data_matrimonios_2012$OCUMUJ)
 ```
 
 
