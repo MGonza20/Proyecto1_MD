@@ -336,6 +336,143 @@ data_matrimonios_2021$PUEMUJ <- case_when(
 
 
 
+```{r}
+campos_2010_ph <- colnames(data_matrimonios_2010)
+campos_2010_ph[campos_2010_ph == "Gethom"] <- "GETHOM"
+colnames(data_matrimonios_2010) <- campos_2010_ph
+```
+
+```{r}
+campos_2011_ph <- colnames(data_matrimonios_2011)
+campos_2011_ph[campos_2011_ph == "Gethom"] <- "GETHOM"
+colnames(data_matrimonios_2011) <- campos_2011_ph
+```
+
+```{r}
+campos_2013_ph <- colnames(data_matrimonios_2013)
+campos_2013_ph[campos_2013_ph == "PUEHOM"] <- "GETHOM"
+colnames(data_matrimonios_2013) <- campos_2013_ph
+```
+
+```{r}
+campos_2014_ph <- colnames(data_matrimonios_2014)
+campos_2014_ph[campos_2014_ph == "PUEHOM"] <- "GETHOM"
+colnames(data_matrimonios_2014) <- campos_2014_ph
+```
+
+```{r}
+campos_2015_ph <- colnames(data_matrimonios_2015)
+campos_2015_ph[campos_2015_ph == "PUEHOM"] <- "GETHOM"
+colnames(data_matrimonios_2015) <- campos_2015_ph
+```
+
+```{r}
+campos_2016_ph <- colnames(data_matrimonios_2016)
+campos_2016_ph[campos_2016_ph == "PUEHOM"] <- "GETHOM"
+colnames(data_matrimonios_2016) <- campos_2016_ph
+```
+
+```{r}
+campos_2017_ph <- colnames(data_matrimonios_2017)
+campos_2017_ph[campos_2017_ph == "PUEHOM"] <- "GETHOM"
+colnames(data_matrimonios_2017) <- campos_2017_ph
+```
+
+```{r}
+campos_2018_ph <- colnames(data_matrimonios_2018)
+campos_2018_ph[campos_2018_ph == "PUEHOM"] <- "GETHOM"
+colnames(data_matrimonios_2018) <- campos_2018_ph
+```
+
+```{r}
+campos_2019_ph <- colnames(data_matrimonios_2019)
+campos_2019_ph[campos_2019_ph == "PUEHOM"] <- "GETHOM"
+colnames(data_matrimonios_2019) <- campos_2019_ph
+```
+
+```{r}
+campos_2020_ph <- colnames(data_matrimonios_2020)
+campos_2020_ph[campos_2020_ph == "PUEHOM"] <- "GETHOM"
+colnames(data_matrimonios_2020) <- campos_2020_ph
+```
+
+```{r}
+campos_2021_ph <- colnames(data_matrimonios_2021)
+campos_2021_ph[campos_2021_ph == "PUEHOM"] <- "GETHOM"
+colnames(data_matrimonios_2021) <- campos_2021_ph
+```
+
+
+
+```{r}
+campos_2010_pm <- colnames(data_matrimonios_2010)
+campos_2010_pm[campos_2010_pm == "Getmuj"] <- "GETMUJ"
+colnames(data_matrimonios_2010) <- campos_2010_pm
+```
+
+```{r}
+campos_2011_pm <- colnames(data_matrimonios_2011)
+campos_2011_pm[campos_2011_pm == "Getmuj"] <- "GETMUJ"
+colnames(data_matrimonios_2011) <- campos_2011_pm
+```
+
+```{r}
+campos_2013_pm <- colnames(data_matrimonios_2013)
+campos_2013_pm[campos_2013_pm == "PUEMUJ"] <- "GETMUJ"
+colnames(data_matrimonios_2013) <- campos_2013_pm
+```
+
+```{r}
+campos_2014_pm <- colnames(data_matrimonios_2014)
+campos_2014_pm[campos_2014_pm == "PUEMUJ"] <- "GETMUJ"
+colnames(data_matrimonios_2014) <- campos_2014_pm
+```
+
+```{r}
+campos_2015_pm <- colnames(data_matrimonios_2015)
+campos_2015_pm[campos_2015_pm == "PUEMUJ"] <- "GETMUJ"
+colnames(data_matrimonios_2015) <- campos_2015_pm
+```
+
+```{r}
+campos_2016_pm <- colnames(data_matrimonios_2016)
+campos_2016_pm[campos_2016_pm == "PUEMUJ"] <- "GETMUJ"
+colnames(data_matrimonios_2016) <- campos_2016_pm
+```
+
+```{r}
+campos_2017_pm <- colnames(data_matrimonios_2017)
+campos_2017_pm[campos_2017_pm == "PUEMUJ"] <- "GETMUJ"
+colnames(data_matrimonios_2017) <- campos_2017_pm
+```
+
+```{r}
+campos_2018_pm <- colnames(data_matrimonios_2018)
+campos_2018_pm[campos_2018_pm == "PUEMUJ"] <- "GETMUJ"
+colnames(data_matrimonios_2018) <- campos_2018_pm
+```
+
+```{r}
+campos_2019_pm <- colnames(data_matrimonios_2019)
+campos_2019_pm[campos_2019_pm == "PUEMUJ"] <- "GETMUJ"
+colnames(data_matrimonios_2019) <- campos_2019_pm
+```
+
+```{r}
+campos_2020_pm <- colnames(data_matrimonios_2020)
+campos_2020_pm[campos_2020_pm == "PUEMUJ"] <- "GETMUJ"
+colnames(data_matrimonios_2020) <- campos_2020_pm
+```
+
+```{r}
+campos_2021_pm <- colnames(data_matrimonios_2021)
+campos_2021_pm[campos_2021_pm == "PUEMUJ"] <- "GETMUJ"
+colnames(data_matrimonios_2021) <- campos_2021_pm
+```
+
+
+
+
 
 
 
