@@ -187,6 +187,158 @@ colnames(data_matrimonios_2012) <- campos_2012_m
 ```
 
 
+```{r}
+data_matrimonios_2013$PUEHOM <- case_when(
+  data_matrimonios_2013$PUEHOM %in% c(1, 2, 3) ~ 1, 
+  data_matrimonios_2013$PUEHOM %in% c(4, 5) ~ 2, 
+  data_matrimonios_2013$PUEHOM == 9 ~ 9, 
+  TRUE ~ data_matrimonios_2013$PUEHOM)
+```
+
+```{r}
+data_matrimonios_2014$PUEHOM <- case_when(
+  data_matrimonios_2014$PUEHOM %in% c(1, 2, 3) ~ 1, 
+  data_matrimonios_2014$PUEHOM %in% c(4, 5) ~ 2, 
+  data_matrimonios_2014$PUEHOM == 9 ~ 9, 
+  TRUE ~ data_matrimonios_2014$PUEHOM)
+```
+
+```{r}
+data_matrimonios_2015$PUEHOM <- case_when(
+  data_matrimonios_2015$PUEHOM %in% c(1, 2, 3) ~ 1, 
+  data_matrimonios_2015$PUEHOM %in% c(4, 5) ~ 2, 
+  data_matrimonios_2015$PUEHOM == 9 ~ 9, 
+  TRUE ~ data_matrimonios_2015$PUEHOM)
+```
+
+```{r}
+data_matrimonios_2016$PUEHOM <- case_when(
+  data_matrimonios_2016$PUEHOM %in% c(1, 2, 3) ~ 1, 
+  data_matrimonios_2016$PUEHOM %in% c(4, 5) ~ 2, 
+  data_matrimonios_2016$PUEHOM == 9 ~ 9, 
+  TRUE ~ data_matrimonios_2016$PUEHOM)
+```
+
+```{r}
+data_matrimonios_2017$PUEHOM <- case_when(
+  data_matrimonios_2017$PUEHOM %in% c(1, 2, 3) ~ 1, 
+  data_matrimonios_2017$PUEHOM %in% c(4, 5) ~ 2, 
+  data_matrimonios_2017$PUEHOM == 9 ~ 9, 
+  TRUE ~ data_matrimonios_2017$PUEHOM)
+```
+
+
+```{r}
+data_matrimonios_2018$PUEHOM <- case_when(
+  data_matrimonios_2018$PUEHOM %in% c(1, 2, 3) ~ 1, 
+  data_matrimonios_2018$PUEHOM %in% c(4, 5) ~ 2, 
+  data_matrimonios_2018$PUEHOM == 9 ~ 9, 
+  TRUE ~ data_matrimonios_2018$PUEHOM)
+```
+
+```{r}
+data_matrimonios_2019$PUEHOM <- case_when(
+  data_matrimonios_2019$PUEHOM %in% c(1, 2, 3) ~ 1, 
+  data_matrimonios_2019$PUEHOM %in% c(4, 5) ~ 2, 
+  data_matrimonios_2019$PUEHOM == 9 ~ 9, 
+  TRUE ~ data_matrimonios_2019$PUEHOM)
+```
+
+```{r}
+data_matrimonios_2020$PUEHOM <- case_when(
+  data_matrimonios_2020$PUEHOM %in% c(1, 2, 3) ~ 1, 
+  data_matrimonios_2020$PUEHOM %in% c(4, 5) ~ 2, 
+  data_matrimonios_2020$PUEHOM == 9 ~ 9, 
+  TRUE ~ data_matrimonios_2020$PUEHOM)
+```
+
+```{r}
+data_matrimonios_2021$PUEHOM <- case_when(
+  data_matrimonios_2021$PUEHOM %in% c(1, 2, 3) ~ 1, 
+  data_matrimonios_2021$PUEHOM %in% c(4, 5) ~ 2, 
+  data_matrimonios_2021$PUEHOM == 9 ~ 9, 
+  TRUE ~ data_matrimonios_2021$PUEHOM)
+```
+
+
+```{r}
+data_matrimonios_2013$PUEMUJ <- case_when(
+  data_matrimonios_2013$PUEMUJ %in% c(1, 2, 3) ~ 1, 
+  data_matrimonios_2013$PUEMUJ %in% c(4, 5) ~ 2, 
+  data_matrimonios_2013$PUEMUJ == 9 ~ 9, 
+  TRUE ~ data_matrimonios_2013$PUEMUJ)
+```
+
+```{r}
+data_matrimonios_2014$PUEMUJ <- case_when(
+  data_matrimonios_2014$PUEMUJ %in% c(1, 2, 3) ~ 1, 
+  data_matrimonios_2014$PUEMUJ %in% c(4, 5) ~ 2, 
+  data_matrimonios_2014$PUEMUJ == 9 ~ 9, 
+  TRUE ~ data_matrimonios_2014$PUEMUJ)
+```
+
+```{r}
+data_matrimonios_2015$PUEMUJ <- case_when(
+  data_matrimonios_2015$PUEMUJ %in% c(1, 2, 3) ~ 1, 
+  data_matrimonios_2015$PUEMUJ %in% c(4, 5) ~ 2, 
+  data_matrimonios_2015$PUEMUJ == 9 ~ 9, 
+  TRUE ~ data_matrimonios_2015$PUEMUJ)
+```
+
+```{r}
+data_matrimonios_2016$PUEMUJ <- case_when(
+  data_matrimonios_2016$PUEMUJ %in% c(1, 2, 3) ~ 1, 
+  data_matrimonios_2016$PUEMUJ %in% c(4, 5) ~ 2, 
+  data_matrimonios_2016$PUEMUJ == 9 ~ 9, 
+  TRUE ~ data_matrimonios_2016$PUEMUJ)
+```
+
+```{r}
+data_matrimonios_2017$PUEMUJ <- case_when(
+  data_matrimonios_2017$PUEMUJ %in% c(1, 2, 3) ~ 1, 
+  data_matrimonios_2017$PUEMUJ %in% c(4, 5) ~ 2, 
+  data_matrimonios_2017$PUEMUJ == 9 ~ 9, 
+  TRUE ~ data_matrimonios_2017$PUEMUJ)
+```
+
+
+```{r}
+data_matrimonios_2018$PUEMUJ <- case_when(
+  data_matrimonios_2018$PUEMUJ %in% c(1, 2, 3) ~ 1, 
+  data_matrimonios_2018$PUEMUJ %in% c(4, 5) ~ 2, 
+  data_matrimonios_2018$PUEMUJ == 9 ~ 9, 
+  TRUE ~ data_matrimonios_2018$PUEMUJ)
+```
+
+```{r}
+data_matrimonios_2019$PUEMUJ <- case_when(
+  data_matrimonios_2019$PUEMUJ %in% c(1, 2, 3) ~ 1, 
+  data_matrimonios_2019$PUEMUJ %in% c(4, 5) ~ 2, 
+  data_matrimonios_2019$PUEMUJ == 9 ~ 9, 
+  TRUE ~ data_matrimonios_2019$PUEMUJ)
+```
+
+```{r}
+data_matrimonios_2020$PUEMUJ <- case_when(
+  data_matrimonios_2020$PUEMUJ %in% c(1, 2, 3) ~ 1, 
+  data_matrimonios_2020$PUEMUJ %in% c(4, 5) ~ 2, 
+  data_matrimonios_2020$PUEMUJ == 9 ~ 9, 
+  TRUE ~ data_matrimonios_2020$PUEMUJ)
+```
+
+```{r}
+data_matrimonios_2021$PUEMUJ <- case_when(
+  data_matrimonios_2021$PUEMUJ %in% c(1, 2, 3) ~ 1, 
+  data_matrimonios_2021$PUEMUJ %in% c(4, 5) ~ 2, 
+  data_matrimonios_2021$PUEMUJ == 9 ~ 9, 
+  TRUE ~ data_matrimonios_2021$PUEMUJ)
+```
+
+
+
+
+
+
 
 
 
