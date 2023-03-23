@@ -11,40 +11,40 @@ library(haven)
 library(dplyr)
 
 
-data_matrimonios_2021 <- read_sav("matrimonios_2021.sav")
+data_matrimonios_2021 <- read_sav("matrimonio2021.sav")
 #View(data_matrimonios_2021)
 
-data_matrimonios_2020 <- read_sav("matrimonios_2020.sav")
+data_matrimonios_2020 <- read_sav("matrimonio2020.sav")
 #View(data_matrimonios_2020)
 
-data_matrimonios_2019 <- read_sav("matrimonios_2019.sav")
+data_matrimonios_2019 <- read_sav("matrimonio2019.sav")
 #View(data_matrimonios_2019)
 
-data_matrimonios_2018 <- read_sav("matrimonios_2018.sav")
+data_matrimonios_2018 <- read_sav("matrimonio2018.sav")
 #View(data_matrimonios_2018)
 
-data_matrimonios_2017 <- read_sav("matrimonios_2017.sav")
+data_matrimonios_2017 <- read_sav("matrimonio2017.sav")
 #View(data_matrimonios_2017)
 
-data_matrimonios_2016 <- read_sav("matrimonios_2016.sav")
+data_matrimonios_2016 <- read_sav("matrimonio2016.sav")
 #View(data_matrimonios_2016)
 
-data_matrimonios_2015 <- read_sav("matrimonios_2015.sav")
+data_matrimonios_2015 <- read_sav("matrimonio2015.sav")
 #View(data_matrimonios_2015)
 
-data_matrimonios_2014 <- read_sav("matrimonios_2014.sav")
+data_matrimonios_2014 <- read_sav("matrimonio2014.sav")
 #View(data_matrimonios_2014)
 
-data_matrimonios_2013 <- read_sav("matrimonios_2013.sav")
+data_matrimonios_2013 <- read_sav("matrimonio2013.sav")
 #View(data_matrimonios_2013)
 
-data_matrimonios_2012 <- read_sav("matrimonios_2012.sav")
+data_matrimonios_2012 <- read_sav("matrimonio2012.sav")
 #View(data_matrimonios_2012)
 
-data_matrimonios_2011 <- read_sav("matrimonios_2011.sav")
+data_matrimonios_2011 <- read_sav("matrimonio2011.sav")
 #View(data_matrimonios_2011)
 
-data_matrimonios_2010 <- read_sav("matrimonios_2010.sav")
+data_matrimonios_2010 <- read_sav("matrimonio2010.sav")
 #View(data_matrimonios_2010)
 ```
 
@@ -58,10 +58,14 @@ data_matrimonios_2010$Ocuhom <- case_when(
   substr(data_matrimonios_2010$Ocuhom, 1, 2) == "97" ~ "NEOG",
   substr(data_matrimonios_2010$Ocuhom, 1, 2) == "99" ~ "IGNORADO",
   TRUE ~ data_matrimonios_2010$Ocuhom)
+
+data_matrimonios_2010$Ocuhom <- as.character(data_matrimonios_2010$Ocuhom)
 ```
 
 ```{r}
 #unique(data_matrimonios_2010$Ocuhom)
+#class(data_matrimonios_2010$Ocuhom)
+
 ```
 
 
@@ -74,6 +78,8 @@ data_matrimonios_2010$Ocumuj <- case_when(
   substr(data_matrimonios_2010$Ocumuj, 1, 2) == "97" ~ "NEOG",
   substr(data_matrimonios_2010$Ocumuj, 1, 2) == "99" ~ "IGNORADO",
   TRUE ~ data_matrimonios_2010$Ocumuj)
+
+data_matrimonios_2010$Ocumuj <- as.character(data_matrimonios_2010$Ocumuj)
 ```
 
 ```{r}
@@ -90,6 +96,8 @@ data_matrimonios_2011$Ocuhom <- case_when(
   substr(data_matrimonios_2011$Ocuhom, 1, 2) == "97" ~ "NEOG",
   substr(data_matrimonios_2011$Ocuhom, 1, 2) == "99" ~ "IGNORADO",
   TRUE ~ data_matrimonios_2011$Ocuhom)
+
+data_matrimonios_2011$Ocuhom <- as.character(data_matrimonios_2011$Ocuhom)
 ```
 
 ```{r}
@@ -108,6 +116,8 @@ data_matrimonios_2011$Ocumuj <- case_when(
   substr(data_matrimonios_2011$Ocumuj, 1, 2) == "97" ~ "NEOG",
   substr(data_matrimonios_2011$Ocumuj, 1, 2) == "99" ~ "IGNORADO",
   TRUE ~ data_matrimonios_2011$Ocumuj)
+
+data_matrimonios_2011$Ocumuj <- as.character(data_matrimonios_2011$Ocumuj)
 ```
 
 ```{r}
@@ -126,6 +136,8 @@ data_matrimonios_2012$OCUHOM <- case_when(
   substr(data_matrimonios_2012$OCUHOM, 1, 2) == "97" ~ "NEOG",
   substr(data_matrimonios_2012$OCUHOM, 1, 2) == "99" ~ "IGNORADO",
   TRUE ~ data_matrimonios_2012$OCUHOM)
+
+data_matrimonios_2012$OCUHOM <- as.character(data_matrimonios_2012$OCUHOM)
 ```
 
 ```{r}
@@ -142,6 +154,8 @@ data_matrimonios_2012$OCUMUJ <- case_when(
   substr(data_matrimonios_2012$OCUMUJ, 1, 2) == "97" ~ "NEOG",
   substr(data_matrimonios_2012$OCUMUJ, 1, 2) == "99" ~ "IGNORADO",
   TRUE ~ data_matrimonios_2012$OCUMUJ)
+
+data_matrimonios_2012$OCUMUJ <- as.character(data_matrimonios_2012$OCUMUJ)
 ```
 
 ```{r}
@@ -562,5 +576,231 @@ if ("AREAGOCU" %in% colnames(data_matrimonios_2015)) { data_matrimonios_2015 <- 
 if ("AREAGOCU" %in% colnames(data_matrimonios_2016)) { data_matrimonios_2016 <- data_matrimonios_2016[, -which(colnames(data_matrimonios_2016) == "AREAGOCU")]}
 
 if ("AREAGOCU" %in% colnames(data_matrimonios_2017)) { data_matrimonios_2017 <- data_matrimonios_2017[, -which(colnames(data_matrimonios_2017) == "AREAGOCU")]}
+```
+
+```{r}
+
+#data_matrimonios_2010$DEPREG
+
+```
+
+```{r}
+
+#data_matrimonios_2011$DEPREG
+
+```
+
+```{r}
+#identical(colnames(data_matrimonios_2010), colnames(data_matrimonios_2011))
+#identical(ncol(data_matrimonios_2010), ncol(data_matrimonios_2011))
+
+#merged_dataset <- rbind(data_matrimonios_2010, data_matrimonios_2011)
+
+class(data_matrimonios_2016$ESCMUJ)
+```
+
+```{r}
+data_matrimonios_2010$DEPREG <- as.double(data_matrimonios_2010$DEPREG)
+data_matrimonios_2011$DEPREG <- as.double(data_matrimonios_2011$DEPREG)
+data_matrimonios_2012$DEPREG <- as.double(data_matrimonios_2012$DEPREG)
+data_matrimonios_2013$DEPREG <- as.double(data_matrimonios_2013$DEPREG)
+data_matrimonios_2014$DEPREG <- as.double(data_matrimonios_2014$DEPREG)
+data_matrimonios_2015$DEPREG <- as.double(data_matrimonios_2015$DEPREG)
+data_matrimonios_2016$DEPREG <- as.double(data_matrimonios_2016$DEPREG)
+data_matrimonios_2017$DEPREG <- as.double(data_matrimonios_2017$DEPREG)
+data_matrimonios_2018$DEPREG <- as.double(data_matrimonios_2018$DEPREG)
+data_matrimonios_2019$DEPREG <- as.double(data_matrimonios_2019$DEPREG)
+data_matrimonios_2020$DEPREG <- as.double(data_matrimonios_2020$DEPREG)
+data_matrimonios_2021$DEPREG <- as.double(data_matrimonios_2021$DEPREG)
+
+data_matrimonios_2010$MUPREG <- as.character(data_matrimonios_2010$MUPREG)
+data_matrimonios_2011$MUPREG <- as.character(data_matrimonios_2011$MUPREG)
+data_matrimonios_2012$MUPREG <- as.character(data_matrimonios_2012$MUPREG)
+data_matrimonios_2013$MUPREG <- as.character(data_matrimonios_2013$MUPREG)
+data_matrimonios_2014$MUPREG <- as.character(data_matrimonios_2014$MUPREG)
+data_matrimonios_2015$MUPREG <- as.character(data_matrimonios_2015$MUPREG)
+data_matrimonios_2016$MUPREG <- as.character(data_matrimonios_2016$MUPREG)
+data_matrimonios_2017$MUPREG <- as.character(data_matrimonios_2017$MUPREG)
+data_matrimonios_2018$MUPREG <- as.character(data_matrimonios_2018$MUPREG)
+data_matrimonios_2019$MUPREG <- as.character(data_matrimonios_2019$MUPREG)
+data_matrimonios_2020$MUPREG <- as.character(data_matrimonios_2020$MUPREG)
+data_matrimonios_2021$MUPREG <- as.character(data_matrimonios_2021$MUPREG)
+
+data_matrimonios_2010$MESREG <- as.double(data_matrimonios_2010$MESREG)
+data_matrimonios_2011$MESREG <- as.double(data_matrimonios_2011$MESREG)
+data_matrimonios_2012$MESREG <- as.double(data_matrimonios_2012$MESREG)
+data_matrimonios_2013$MESREG <- as.double(data_matrimonios_2013$MESREG)
+data_matrimonios_2014$MESREG <- as.double(data_matrimonios_2014$MESREG)
+data_matrimonios_2015$MESREG <- as.double(data_matrimonios_2015$MESREG)
+data_matrimonios_2016$MESREG <- as.double(data_matrimonios_2016$MESREG)
+data_matrimonios_2017$MESREG <- as.double(data_matrimonios_2017$MESREG)
+data_matrimonios_2018$MESREG <- as.double(data_matrimonios_2018$MESREG)
+data_matrimonios_2019$MESREG <- as.double(data_matrimonios_2019$MESREG)
+data_matrimonios_2020$MESREG <- as.double(data_matrimonios_2020$MESREG)
+data_matrimonios_2021$MESREG <- as.double(data_matrimonios_2021$MESREG)
+
+data_matrimonios_2010$CLAUNI <- as.double(data_matrimonios_2010$CLAUNI)
+data_matrimonios_2011$CLAUNI <- as.double(data_matrimonios_2011$CLAUNI)
+data_matrimonios_2012$CLAUNI <- as.double(data_matrimonios_2012$CLAUNI)
+data_matrimonios_2013$CLAUNI <- as.double(data_matrimonios_2013$CLAUNI)
+data_matrimonios_2014$CLAUNI <- as.double(data_matrimonios_2014$CLAUNI)
+data_matrimonios_2015$CLAUNI <- as.double(data_matrimonios_2015$CLAUNI)
+data_matrimonios_2016$CLAUNI <- as.double(data_matrimonios_2016$CLAUNI)
+data_matrimonios_2017$CLAUNI <- as.double(data_matrimonios_2017$CLAUNI)
+data_matrimonios_2018$CLAUNI <- as.double(data_matrimonios_2018$CLAUNI)
+data_matrimonios_2019$CLAUNI <- as.double(data_matrimonios_2019$CLAUNI)
+data_matrimonios_2020$CLAUNI <- as.double(data_matrimonios_2020$CLAUNI)
+data_matrimonios_2021$CLAUNI <- as.double(data_matrimonios_2021$CLAUNI)
+
+data_matrimonios_2010$EDADHOM <- as.double(data_matrimonios_2010$EDADHOM)
+data_matrimonios_2011$EDADHOM <- as.double(data_matrimonios_2011$EDADHOM)
+data_matrimonios_2012$EDADHOM <- as.double(data_matrimonios_2012$EDADHOM)
+data_matrimonios_2013$EDADHOM <- as.double(data_matrimonios_2013$EDADHOM)
+data_matrimonios_2014$EDADHOM <- as.double(data_matrimonios_2014$EDADHOM)
+data_matrimonios_2015$EDADHOM <- as.double(data_matrimonios_2015$EDADHOM)
+data_matrimonios_2016$EDADHOM <- as.double(data_matrimonios_2016$EDADHOM)
+data_matrimonios_2017$EDADHOM <- as.double(data_matrimonios_2017$EDADHOM)
+data_matrimonios_2018$EDADHOM <- as.double(data_matrimonios_2018$EDADHOM)
+data_matrimonios_2019$EDADHOM <- as.double(data_matrimonios_2019$EDADHOM)
+data_matrimonios_2020$EDADHOM <- as.double(data_matrimonios_2020$EDADHOM)
+data_matrimonios_2021$EDADHOM <- as.double(data_matrimonios_2021$EDADHOM)
+
+data_matrimonios_2010$EDADMUJ <- as.double(data_matrimonios_2010$EDADMUJ)
+data_matrimonios_2011$EDADMUJ <- as.double(data_matrimonios_2011$EDADMUJ)
+data_matrimonios_2012$EDADMUJ <- as.double(data_matrimonios_2012$EDADMUJ)
+data_matrimonios_2013$EDADMUJ <- as.double(data_matrimonios_2013$EDADMUJ)
+data_matrimonios_2014$EDADMUJ <- as.double(data_matrimonios_2014$EDADMUJ)
+data_matrimonios_2015$EDADMUJ <- as.double(data_matrimonios_2015$EDADMUJ)
+data_matrimonios_2016$EDADMUJ <- as.double(data_matrimonios_2016$EDADMUJ)
+data_matrimonios_2017$EDADMUJ <- as.double(data_matrimonios_2017$EDADMUJ)
+data_matrimonios_2018$EDADMUJ <- as.double(data_matrimonios_2018$EDADMUJ)
+data_matrimonios_2019$EDADMUJ <- as.double(data_matrimonios_2019$EDADMUJ)
+data_matrimonios_2020$EDADMUJ <- as.double(data_matrimonios_2020$EDADMUJ)
+data_matrimonios_2021$EDADMUJ <- as.double(data_matrimonios_2021$EDADMUJ)
+
+data_matrimonios_2010$GETHOM <- as.double(data_matrimonios_2010$GETHOM)
+data_matrimonios_2011$GETHOM <- as.double(data_matrimonios_2011$GETHOM)
+data_matrimonios_2012$GETHOM <- as.double(data_matrimonios_2012$GETHOM)
+data_matrimonios_2013$GETHOM <- as.double(data_matrimonios_2013$GETHOM)
+data_matrimonios_2014$GETHOM <- as.double(data_matrimonios_2014$GETHOM)
+data_matrimonios_2015$GETHOM <- as.double(data_matrimonios_2015$GETHOM)
+data_matrimonios_2016$GETHOM <- as.double(data_matrimonios_2016$GETHOM)
+data_matrimonios_2017$GETHOM <- as.double(data_matrimonios_2017$GETHOM)
+data_matrimonios_2018$GETHOM <- as.double(data_matrimonios_2018$GETHOM)
+data_matrimonios_2019$GETHOM <- as.double(data_matrimonios_2019$GETHOM)
+data_matrimonios_2020$GETHOM <- as.double(data_matrimonios_2020$GETHOM)
+data_matrimonios_2021$GETHOM <- as.double(data_matrimonios_2021$GETHOM)
+
+data_matrimonios_2010$GETMUJ <- as.double(data_matrimonios_2010$GETMUJ)
+data_matrimonios_2011$GETMUJ <- as.double(data_matrimonios_2011$GETMUJ)
+data_matrimonios_2012$GETMUJ <- as.double(data_matrimonios_2012$GETMUJ)
+data_matrimonios_2013$GETMUJ <- as.double(data_matrimonios_2013$GETMUJ)
+data_matrimonios_2014$GETMUJ <- as.double(data_matrimonios_2014$GETMUJ)
+data_matrimonios_2015$GETMUJ <- as.double(data_matrimonios_2015$GETMUJ)
+data_matrimonios_2016$GETMUJ <- as.double(data_matrimonios_2016$GETMUJ)
+data_matrimonios_2017$GETMUJ <- as.double(data_matrimonios_2017$GETMUJ)
+data_matrimonios_2018$GETMUJ <- as.double(data_matrimonios_2018$GETMUJ)
+data_matrimonios_2019$GETMUJ <- as.double(data_matrimonios_2019$GETMUJ)
+data_matrimonios_2020$GETMUJ <- as.double(data_matrimonios_2020$GETMUJ)
+data_matrimonios_2021$GETMUJ <- as.double(data_matrimonios_2021$GETMUJ)
+
+data_matrimonios_2010$NACHOM <- as.double(data_matrimonios_2010$NACHOM)
+data_matrimonios_2011$NACHOM <- as.double(data_matrimonios_2011$NACHOM)
+data_matrimonios_2012$NACHOM <- as.double(data_matrimonios_2012$NACHOM)
+data_matrimonios_2013$NACHOM <- as.double(data_matrimonios_2013$NACHOM)
+data_matrimonios_2014$NACHOM <- as.double(data_matrimonios_2014$NACHOM)
+data_matrimonios_2015$NACHOM <- as.double(data_matrimonios_2015$NACHOM)
+data_matrimonios_2016$NACHOM <- as.double(data_matrimonios_2016$NACHOM)
+data_matrimonios_2017$NACHOM <- as.double(data_matrimonios_2017$NACHOM)
+data_matrimonios_2018$NACHOM <- as.double(data_matrimonios_2018$NACHOM)
+data_matrimonios_2019$NACHOM <- as.double(data_matrimonios_2019$NACHOM)
+data_matrimonios_2020$NACHOM <- as.double(data_matrimonios_2020$NACHOM)
+data_matrimonios_2021$NACHOM <- as.double(data_matrimonios_2021$NACHOM)
+
+data_matrimonios_2010$NACMUJ <- as.double(data_matrimonios_2010$NACMUJ)
+data_matrimonios_2011$NACMUJ <- as.double(data_matrimonios_2011$NACMUJ)
+data_matrimonios_2012$NACMUJ <- as.double(data_matrimonios_2012$NACMUJ)
+data_matrimonios_2013$NACMUJ <- as.double(data_matrimonios_2013$NACMUJ)
+data_matrimonios_2014$NACMUJ <- as.double(data_matrimonios_2014$NACMUJ)
+data_matrimonios_2015$NACMUJ <- as.double(data_matrimonios_2015$NACMUJ)
+data_matrimonios_2016$NACMUJ <- as.double(data_matrimonios_2016$NACMUJ)
+data_matrimonios_2017$NACMUJ <- as.double(data_matrimonios_2017$NACMUJ)
+data_matrimonios_2018$NACMUJ <- as.double(data_matrimonios_2018$NACMUJ)
+data_matrimonios_2019$NACMUJ <- as.double(data_matrimonios_2019$NACMUJ)
+data_matrimonios_2020$NACMUJ <- as.double(data_matrimonios_2020$NACMUJ)
+data_matrimonios_2021$NACMUJ <- as.double(data_matrimonios_2021$NACMUJ)
+
+data_matrimonios_2010$ESCHOM <- as.double(data_matrimonios_2010$ESCHOM)
+data_matrimonios_2011$ESCHOM <- as.double(data_matrimonios_2011$ESCHOM)
+data_matrimonios_2012$ESCHOM <- as.double(data_matrimonios_2012$ESCHOM)
+data_matrimonios_2013$ESCHOM <- as.double(data_matrimonios_2013$ESCHOM)
+data_matrimonios_2014$ESCHOM <- as.double(data_matrimonios_2014$ESCHOM)
+data_matrimonios_2015$ESCHOM <- as.double(data_matrimonios_2015$ESCHOM)
+data_matrimonios_2016$ESCHOM <- as.double(data_matrimonios_2016$ESCHOM)
+data_matrimonios_2017$ESCHOM <- as.double(data_matrimonios_2017$ESCHOM)
+data_matrimonios_2018$ESCHOM <- as.double(data_matrimonios_2018$ESCHOM)
+data_matrimonios_2019$ESCHOM <- as.double(data_matrimonios_2019$ESCHOM)
+data_matrimonios_2020$ESCHOM <- as.double(data_matrimonios_2020$ESCHOM)
+data_matrimonios_2021$ESCHOM <- as.double(data_matrimonios_2021$ESCHOM)
+
+
+data_matrimonios_2010$ESCMUJ <- as.double(data_matrimonios_2010$ESCMUJ)
+data_matrimonios_2011$ESCMUJ <- as.double(data_matrimonios_2011$ESCMUJ)
+data_matrimonios_2012$ESCMUJ <- as.double(data_matrimonios_2012$ESCMUJ)
+data_matrimonios_2013$ESCMUJ <- as.double(data_matrimonios_2013$ESCMUJ)
+data_matrimonios_2014$ESCMUJ <- as.double(data_matrimonios_2014$ESCMUJ)
+data_matrimonios_2015$ESCMUJ <- as.double(data_matrimonios_2015$ESCMUJ)
+data_matrimonios_2016$ESCMUJ <- as.double(data_matrimonios_2016$ESCMUJ)
+data_matrimonios_2017$ESCMUJ <- as.double(data_matrimonios_2017$ESCMUJ)
+data_matrimonios_2018$ESCMUJ <- as.double(data_matrimonios_2018$ESCMUJ)
+data_matrimonios_2019$ESCMUJ <- as.double(data_matrimonios_2019$ESCMUJ)
+data_matrimonios_2020$ESCMUJ <- as.double(data_matrimonios_2020$ESCMUJ)
+data_matrimonios_2021$ESCMUJ <- as.double(data_matrimonios_2021$ESCMUJ)
+
+
+data_matrimonios_2010$DEPOCU <- as.double(data_matrimonios_2010$DEPOCU)
+data_matrimonios_2011$DEPOCU <- as.double(data_matrimonios_2011$DEPOCU)
+data_matrimonios_2012$DEPOCU <- as.double(data_matrimonios_2012$DEPOCU)
+data_matrimonios_2013$DEPOCU <- as.double(data_matrimonios_2013$DEPOCU)
+data_matrimonios_2014$DEPOCU <- as.double(data_matrimonios_2014$DEPOCU)
+data_matrimonios_2015$DEPOCU <- as.double(data_matrimonios_2015$DEPOCU)
+data_matrimonios_2016$DEPOCU <- as.double(data_matrimonios_2016$DEPOCU)
+data_matrimonios_2017$DEPOCU <- as.double(data_matrimonios_2017$DEPOCU)
+data_matrimonios_2018$DEPOCU <- as.double(data_matrimonios_2018$DEPOCU)
+data_matrimonios_2019$DEPOCU <- as.double(data_matrimonios_2019$DEPOCU)
+data_matrimonios_2020$DEPOCU <- as.double(data_matrimonios_2020$DEPOCU)
+data_matrimonios_2021$DEPOCU <- as.double(data_matrimonios_2021$DEPOCU)
+
+data_matrimonios_2010$MUPOCU <- as.character(data_matrimonios_2010$MUPOCU)
+data_matrimonios_2011$MUPOCU <- as.character(data_matrimonios_2011$MUPOCU)
+data_matrimonios_2012$MUPOCU <- as.character(data_matrimonios_2012$MUPOCU)
+data_matrimonios_2013$MUPOCU <- as.character(data_matrimonios_2013$MUPOCU)
+data_matrimonios_2014$MUPOCU <- as.character(data_matrimonios_2014$MUPOCU)
+data_matrimonios_2015$MUPOCU <- as.character(data_matrimonios_2015$MUPOCU)
+data_matrimonios_2016$MUPOCU <- as.character(data_matrimonios_2016$MUPOCU)
+data_matrimonios_2017$MUPOCU <- as.character(data_matrimonios_2017$MUPOCU)
+data_matrimonios_2018$MUPOCU <- as.character(data_matrimonios_2018$MUPOCU)
+data_matrimonios_2019$MUPOCU <- as.character(data_matrimonios_2019$MUPOCU)
+data_matrimonios_2020$MUPOCU <- as.character(data_matrimonios_2020$MUPOCU)
+data_matrimonios_2021$MUPOCU <- as.character(data_matrimonios_2021$MUPOCU)
+
+data_matrimonios_2010$MESOCU <- as.double(data_matrimonios_2010$MESOCU)
+data_matrimonios_2011$MESOCU <- as.double(data_matrimonios_2011$MESOCU)
+data_matrimonios_2012$MESOCU <- as.double(data_matrimonios_2012$MESOCU)
+data_matrimonios_2013$MESOCU <- as.double(data_matrimonios_2013$MESOCU)
+data_matrimonios_2014$MESOCU <- as.double(data_matrimonios_2014$MESOCU)
+data_matrimonios_2015$MESOCU <- as.double(data_matrimonios_2015$MESOCU)
+data_matrimonios_2016$MESOCU <- as.double(data_matrimonios_2016$MESOCU)
+data_matrimonios_2017$MESOCU <- as.double(data_matrimonios_2017$MESOCU)
+data_matrimonios_2018$MESOCU <- as.double(data_matrimonios_2018$MESOCU)
+data_matrimonios_2019$MESOCU <- as.double(data_matrimonios_2019$MESOCU)
+data_matrimonios_2020$MESOCU <- as.double(data_matrimonios_2020$MESOCU)
+data_matrimonios_2021$MESOCU <- as.double(data_matrimonios_2021$MESOCU)
+
+merged_dataset <- rbind(data_matrimonios_2010, data_matrimonios_2011, data_matrimonios_2012, data_matrimonios_2013, data_matrimonios_2014, data_matrimonios_2015, data_matrimonios_2016, data_matrimonios_2017, data_matrimonios_2018, data_matrimonios_2019, data_matrimonios_2020, data_matrimonios_2021)
+
+merged_dataset
+
+
 ```
 
