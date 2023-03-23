@@ -496,3 +496,19 @@ if ("AÑOOCU" %in% colnames(data_matrimonios_2020)) { data_matrimonios_2020 <- d
 
 if ("AÑOOCU" %in% colnames(data_matrimonios_2021)) { data_matrimonios_2021 <- data_matrimonios_2021[, -which(colnames(data_matrimonios_2021) == "AÑOOCU")]}
 ```
+
+```{r}
+if ("NUNUHO" %in% colnames(data_matrimonios_2015)) { data_matrimonios_2015 <- data_matrimonios_2015[, -which(colnames(data_matrimonios_2015) == "NUNUHO")]}
+
+if ("NUNUHO" %in% colnames(data_matrimonios_2016)) { data_matrimonios_2016 <- data_matrimonios_2016[, -which(colnames(data_matrimonios_2016) == "NUNUHO")]}
+
+if ("NUNUHO" %in% colnames(data_matrimonios_2017)) { data_matrimonios_2017 <- data_matrimonios_2017[, -which(colnames(data_matrimonios_2017) == "NUNUHO")]}
+
+if ("NUNUHO" %in% colnames(data_matrimonios_2018)) { data_matrimonios_2018 <- data_matrimonios_2018[, -which(colnames(data_matrimonios_2018) == "NUNUHO")]}
+
+if ("NUNUHO" %in% colnames(data_matrimonios_2019)) { data_matrimonios_2019 <- data_matrimonios_2019[, -which(colnames(data_matrimonios_2019) == "NUNUHO")]}
+
+if ("NUNUHO" %in% colnames(data_matrimonios_2020)) { data_matrimonios_2020 <- data_matrimonios_2020[, -which(colnames(data_matrimonios_2020) == "NUNUHO")]}
+
+if ("NUNUHO" %in% colnames(data_matrimonios_2021)) { data_matrimonios_2021 <- data_matrimonios_2021[, -which(colnames(data_matrimonios_2021) == "NUNUHO")]}
+```
