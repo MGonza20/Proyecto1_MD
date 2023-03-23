@@ -530,7 +530,37 @@ if ("NUNUMU" %in% colnames(data_matrimonios_2021)) { data_matrimonios_2021 <- da
 ```
 
 
+```{r}
+if ("NUNUMU" %in% colnames(data_matrimonios_2015)) { data_matrimonios_2015 <- data_matrimonios_2015[, -which(colnames(data_matrimonios_2015) == "NUNUMU")]}
 
+if ("NUNUMU" %in% colnames(data_matrimonios_2016)) { data_matrimonios_2016 <- data_matrimonios_2016[, -which(colnames(data_matrimonios_2016) == "NUNUMU")]}
 
+if ("NUNUMU" %in% colnames(data_matrimonios_2017)) { data_matrimonios_2017 <- data_matrimonios_2017[, -which(colnames(data_matrimonios_2017) == "NUNUMU")]}
 
+if ("NUNUMU" %in% colnames(data_matrimonios_2018)) { data_matrimonios_2018 <- data_matrimonios_2018[, -which(colnames(data_matrimonios_2018) == "NUNUMU")]}
+
+if ("NUNUMU" %in% colnames(data_matrimonios_2019)) { data_matrimonios_2019 <- data_matrimonios_2019[, -which(colnames(data_matrimonios_2019) == "NUNUMU")]}
+
+if ("NUNUMU" %in% colnames(data_matrimonios_2020)) { data_matrimonios_2020 <- data_matrimonios_2020[, -which(colnames(data_matrimonios_2020) == "NUNUMU")]}
+
+if ("NUNUMU" %in% colnames(data_matrimonios_2021)) { data_matrimonios_2021 <- data_matrimonios_2021[, -which(colnames(data_matrimonios_2021) == "NUNUMU")]}
+```
+
+```{r}
+if ("AREAG" %in% colnames(data_matrimonios_2010)) { data_matrimonios_2010 <- data_matrimonios_2010[, -which(colnames(data_matrimonios_2010) == "AREAG")]}
+
+if ("AREAG" %in% colnames(data_matrimonios_2011)) { data_matrimonios_2011 <- data_matrimonios_2011[, -which(colnames(data_matrimonios_2011) == "AREAG")]}
+
+if ("AREAG" %in% colnames(data_matrimonios_2012)) { data_matrimonios_2012 <- data_matrimonios_2012[, -which(colnames(data_matrimonios_2012) == "AREAG")]}
+
+if ("AREAGOCU" %in% colnames(data_matrimonios_2013)) { data_matrimonios_2013 <- data_matrimonios_2013[, -which(colnames(data_matrimonios_2013) == "AREAGOCU")]}
+
+if ("AREAGOCU" %in% colnames(data_matrimonios_2014)) { data_matrimonios_2014 <- data_matrimonios_2014[, -which(colnames(data_matrimonios_2014) == "AREAGOCU")]}
+
+if ("AREAGOCU" %in% colnames(data_matrimonios_2015)) { data_matrimonios_2015 <- data_matrimonios_2015[, -which(colnames(data_matrimonios_2015) == "AREAGOCU")]}
+
+if ("AREAGOCU" %in% colnames(data_matrimonios_2016)) { data_matrimonios_2016 <- data_matrimonios_2016[, -which(colnames(data_matrimonios_2016) == "AREAGOCU")]}
+
+if ("AREAGOCU" %in% colnames(data_matrimonios_2017)) { data_matrimonios_2017 <- data_matrimonios_2017[, -which(colnames(data_matrimonios_2017) == "AREAGOCU")]}
+```
 
