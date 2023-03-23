@@ -477,4 +477,22 @@ colnames(data_matrimonios_2011) <- toupper(colnames(data_matrimonios_2011))
 colnames(data_matrimonios_2012) <- toupper(colnames(data_matrimonios_2012))
 ```
 
+```{r}
+if ("AÑOOCU" %in% colnames(data_matrimonios_2010)) { data_matrimonios_2010 <- data_matrimonios_2010[, -which(colnames(data_matrimonios_2010) == "AÑOOCU")]}
 
+if ("AÑOOCU" %in% colnames(data_matrimonios_2011)) { data_matrimonios_2011 <- data_matrimonios_2011[, -which(colnames(data_matrimonios_2011) == "AÑOOCU")]}
+
+if ("AÑOOCU" %in% colnames(data_matrimonios_2015)) { data_matrimonios_2015 <- data_matrimonios_2015[, -which(colnames(data_matrimonios_2015) == "AÑOOCU")]}
+
+if ("AÑOOCU" %in% colnames(data_matrimonios_2016)) { data_matrimonios_2016 <- data_matrimonios_2016[, -which(colnames(data_matrimonios_2016) == "AÑOOCU")]}
+
+if ("AÑOOCU" %in% colnames(data_matrimonios_2017)) { data_matrimonios_2017 <- data_matrimonios_2017[, -which(colnames(data_matrimonios_2017) == "AÑOOCU")]}
+
+if ("AÑOOCU" %in% colnames(data_matrimonios_2018)) { data_matrimonios_2018 <- data_matrimonios_2018[, -which(colnames(data_matrimonios_2018) == "AÑOOCU")]}
+
+if ("AÑOOCU" %in% colnames(data_matrimonios_2019)) { data_matrimonios_2019 <- data_matrimonios_2019[, -which(colnames(data_matrimonios_2019) == "AÑOOCU")]}
+
+if ("AÑOOCU" %in% colnames(data_matrimonios_2020)) { data_matrimonios_2020 <- data_matrimonios_2020[, -which(colnames(data_matrimonios_2020) == "AÑOOCU")]}
+
+if ("AÑOOCU" %in% colnames(data_matrimonios_2021)) { data_matrimonios_2021 <- data_matrimonios_2021[, -which(colnames(data_matrimonios_2021) == "AÑOOCU")]}
+```
