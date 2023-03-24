@@ -804,6 +804,50 @@ merged_dataset
 
 ```
 
+```{r}
+merged_dataset_wo999 <- subset(merged_dataset, EDADHOM != 999)
+
+boxplot(merged_dataset_wo999$EDADHOM)
+```
+Se puede ver que la data de edad de los hombres no está distribuida de forma normal ya que hay varias puntos atipicos.
+
+
+```{r}
+lillie.test(merged_dataset_wo999$EDADHOM)
+```
+Esto se ve confirmado con la prueba de lillie fors ya que el valor es de 0.17 que es menor a 0.5 y esto nos indica que no se sigue una distribución normal.
+
+
+```{r}
+merged_dataset_wo_m999 <- subset(merged_dataset, EDADMUJ != 999)
+
+boxplot(merged_dataset_wo_m999$EDADMUJ)
+```
+Se puede ver que la data de edad de los hombres no está distribuida de forma normal ya que hay varias puntos atipicos.
+
+
+```{r}
+lillie.test(merged_dataset_wo_m999$EDADMUJ)
+```
+Esto se ve confirmado con la prueba de lillie fors ya que el valor es de 0.17 que es menor a 0.5 y esto nos indica que no se sigue una distribución normal.
+
+
+```{r}
+
+merged_dataset_wo_hm999 <- subset(merged_dataset, EDADMUJ != 999) 
+merged_dataset_wo_hm999 <- subset(merged_dataset_wo_hm999, EDADHOM != 999) 
+
+
+ggplot(merged_dataset_wo_hm999, aes(x = EDADHOM, y = EDADMUJ)) +
+  geom_point() +
+  ggtitle("Relación entre la edad del hombre y la edad de la mujer en el matrimonio") +
+  labs(x = "Edad del hombre", y = "Edad de la mujer") +
+  theme_minimal()
+```
+
+
+
+
 ```{r Correlacion de variables numericas}
 promedio_edad <- mean(merged_dataset$EDADHOM[merged_dataset$EDADHOM < 18], na.rm = TRUE)
 merged_dataset$EDADHOM_temp <- ifelse(merged_dataset$EDADHOM == 999, promedio_edad, merged_dataset$EDADHOM)
