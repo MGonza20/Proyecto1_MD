@@ -1125,6 +1125,13 @@ pregunta3EH
 
 Del gráfico anterior se observa que la mayoría, un 39.8%, de los hombres casados son mestizos o ladinos. 35.96% son mayas, 12.68% son garifunas, 1.11% son de otras etnias y el 10.45% son datos ignorados. Entonces podemos decir que la gran parte de los hombres son mestizos o ladinos y mayas.
 
+## Conclusiones
+
+1. La conclusión que se puede extraer de este hallazgo es que la mayoría de los matrimonios con menores de edad involucran a hombres mayores que a las mujeres, y que la diferencia de edad más comúnmente reportada es de 2 a 5 años. Aunque esto sugiere que los hombres también pueden ser jóvenes, no cambia el hecho de que estas uniones a menudo involucran una brecha significativa de poder y experiencia, lo que puede conducir a una mayor vulnerabilidad y explotación de las niñas y mujeres jóvenes involucradas. Es importante abordar esta problemática para garantizar el bienestar y la protección de los menores de edad.
+
+
+
+
 
 ```{r}
 pregunta4EH
