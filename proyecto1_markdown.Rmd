@@ -837,7 +837,10 @@ ggplot(dataframe, aes(x = nombre_cat, y = categoria, fill = nombre_cat)) +
 
 
 ```
-Claramente se puede notar que en los casos en que hay casamientos de en donde solo hay 1 menor de edad, la mayor parte de las veces es una mujer.
+Claramente se puede notar que en los casos en que hay casamientos en donde solo hay 1 menor de edad, la mayor parte de los casos es una mujer  y en los otros casos se ve considerablemente reducida la cantidad de veces en que el menor de edad es un hombre o ambos son menor de edad.
+
+
+
 
 
 
