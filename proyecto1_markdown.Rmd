@@ -811,11 +811,33 @@ boxplot(merged_dataset_wo999$EDADHOM)
 ```
 Se puede ver que la data de edad de los hombres no está distribuida de forma normal ya que hay varias puntos atipicos.
 
+```{r}
+summary(merged_dataset_wo999$EDADHOM)
+```
+
+
 
 ```{r}
 lillie.test(merged_dataset_wo999$EDADHOM)
 ```
 Esto se ve confirmado con la prueba de lillie fors ya que el valor es de 0.17 que es menor a 0.5 y esto nos indica que no se sigue una distribución normal.
+
+```{r}
+
+dataframe <- data.frame(
+  edad_hombre = merged_dataset_wo999$EDADHOM,
+  count = rep(1, nrow(merged_dataset_wo999))
+)
+
+
+ggplot(dataframe, aes(x = edad_hombre)) +
+  geom_bar() +
+  ggtitle("Distribución de edades del hombre al momento de contraer matrimonio") +
+  labs(x = "Edad del hombre", y = "Cantidad de casos") +
+  theme_minimal()
+
+```
+
 
 
 ```{r}
@@ -823,13 +845,19 @@ merged_dataset_wo_m999 <- subset(merged_dataset, EDADMUJ != 999)
 
 boxplot(merged_dataset_wo_m999$EDADMUJ)
 ```
-Se puede ver que la data de edad de los hombres no está distribuida de forma normal ya que hay varias puntos atipicos.
+Se puede ver que la data de edad de las mujeres no está distribuida de forma normal ya que hay varias puntos atipicos.
+
+
 
 
 ```{r}
 lillie.test(merged_dataset_wo_m999$EDADMUJ)
 ```
 Esto se ve confirmado con la prueba de lillie fors ya que el valor es de 0.17 que es menor a 0.5 y esto nos indica que no se sigue una distribución normal.
+
+```{r}
+summary(merged_dataset_wo_m999$EDADMUJ)
+```
 
 
 ```{r}
