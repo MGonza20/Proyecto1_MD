@@ -821,3 +821,25 @@ text(paste("Correlación:", round(cor(merged_dataset$EDADHOM_temp, merged_datase
 La alta correlación entre ambas variables nos permite saber que tanto el hombre como la mujer tienen edades bastante cercanas al momento de casarse. Hay muy pocos puntos atípicos pero los que existen se refieren a que hay una diferencia significativa en la edad.
 
 
+```{r}
+dataframe <- data.frame(
+  nombre_cat = c("Menor de edad (mujer)", "Menor de edad (hombre)", "Ambos menores de edad", "Ninguno es menor de edad"),
+  categoria = c(sum(merged_dataset$EDADMUJ < 18), sum(merged_dataset$EDADHOM < 18), sum(merged_dataset$EDADMUJ < 18 & merged_dataset$EDADHOM < 18), sum(merged_dataset$EDADMUJ >= 18 & merged_dataset$EDADHOM >= 18)))
+
+ggplot(dataframe, aes(x = nombre_cat, y = categoria, fill = nombre_cat)) +
+  geom_bar(stat = "identity", color = "black", width = 0.7) +
+  ggtitle("Casamientos por edad y sexo") +
+  labs(x = "Categoría", y = "Cantidad") +
+  theme_void() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1, vjust = 1),
+        legend.position = "none") +
+  geom_text(aes(label = categoria), vjust = 0, size = 4)
+
+
+```
+Claramente se puede notar que en los casos en que hay casamientos de en donde solo hay 1 menor de edad, la mayor parte de las veces es una mujer.
+
+
+
+
+
