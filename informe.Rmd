@@ -318,7 +318,7 @@ PreguntaEscolaridad<-ggplot(data=EscoH, aes(x=EscolaridadHombre, y=CantidadEscol
   geom_bar(stat="identity", position=position_dodge())+
   geom_text(aes(label=CantidadEscolaridadHombre), vjust=1.6, color="black",
             position = position_dodge(0.9), size=3.5)+
-  labs(title="Escolaridad de los hombres con matrimonio", y="Cantidad de matrimonios ")+
+  labs(title="Nivel de escolaridad de los hombres con matrimonio", y="Cantidad de matrimonios ")+
   theme(legend.position="none")
 
 #Pie chart
@@ -340,7 +340,7 @@ PreguntaEscolaridadMujer<-ggplot(data=EscoM, aes(x=EscolaridadMujer, y=CantidadE
   geom_bar(stat="identity", position=position_dodge())+
   geom_text(aes(label=CantidadEscolaridadMujer), vjust=1.6, color="black",
             position = position_dodge(0.9), size=3.5)+
-  labs(title="Escolaridad de las mujeres", y="Cantidad")+
+  labs(title="Nivel de escolaridad de las mujeres", y="Cantidad")+
   theme(legend.position="none")
 #Pie chart
 
@@ -408,7 +408,7 @@ diffEdades<-ggplot(data=diffMayorN, aes(x=Diferencia, y=Diferencia,fill=Diferenc
   geom_bar(stat="identity", position=position_dodge())+
   geom_text(aes(label=Diferencia), vjust=1.6, color="black",
             position = position_dodge(0.9), size=3.5)+
-  labs(title="Diferencia de edades entre los matrimonios con un menor de edad", y="Diferencia de edades")+
+  labs(title="Mayores diferencias de edades de personas casadas con un menor", y="Diferencia de edades")+
   theme(legend.position="none")
 
 
@@ -424,7 +424,7 @@ diffEdadesG<-ggplot(data=diffGroup, aes(x=Diferencia, y=n,fill=Diferencia)) +
   geom_bar(stat="identity", position=position_dodge())+
   geom_text(aes(label=n), vjust=1.6, color="black",
             position = position_dodge(0.9), size=3.5)+
-  labs(title="Cantidad de diferencia de edades", y="Diferencia de edades")+
+  labs(title="Cantidad de años de diferencia de edades entre personas casadas con un menor", y="Diferencia de edades")+
   theme(legend.position="none")
 
 
@@ -602,7 +602,7 @@ pregunta2.2<-ggplot(data=df1, aes(x=reorder(Mes,Cantidad), y=Cantidad, fill=Mes)
   geom_bar(stat="identity", position=position_dodge())+
   geom_text(aes(label=Cantidad), vjust=1.6, color="black",
             position = position_dodge(0.9), size=3.5)+
-  labs(title="Mes en el con mayores bodas registradas  ", x="Mes", y="Cantidad")+theme(legend.position="none")
+  labs(title="Cantidad de bodas registradas por mes", x="Mes", y="Cantidad")+theme(legend.position="none")
 
 
 # Pregunta 3:  Porcentaje de clase de union por año
