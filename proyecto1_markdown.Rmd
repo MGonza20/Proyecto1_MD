@@ -840,8 +840,21 @@ ggplot(dataframe, aes(x = nombre_cat, y = categoria, fill = nombre_cat)) +
 Claramente se puede notar que en los casos en que hay casamientos en donde solo hay 1 menor de edad, la mayor parte de los casos es una mujer  y en los otros casos se ve considerablemente reducida la cantidad de veces en que el menor de edad es un hombre o ambos son menor de edad.
 
 
+```{r}
+dataframe <- data.frame(
+  nivel_educativo = factor(merged_dataset$ESCMUJ[merged_dataset$EDADMUJ < 18], 
+  labels = c("Ninguno", "Primaria", "Básica", "Diversificado", "Universitario", "Ignorado")), rep(1, length(merged_dataset$ESCMUJ[merged_dataset$EDADMUJ < 18])))
+
+ggplot(dataframe, aes(x = nivel_educativo, fill = nivel_educativo)) +
+  geom_bar() +
+  ggtitle("Niveles educativos de menores de edad") +
+  labs(x = "Nivel educativo", y = "Cantidad") +
+  theme_minimal() +
+  geom_text(stat = "count", aes(label = ..count..), vjust = -0.5)
 
 
+```
+La mayor parte de mujeres menores de edad no tienen educación al momento del matrimonio o apenas tienen el nivel de educación primaria. 
 
 
 
