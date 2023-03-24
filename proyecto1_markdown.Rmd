@@ -818,6 +818,6 @@ abline(lm(merged_dataset$EDADMUJ_temp ~ merged_dataset$EDADHOM_temp), col = "gre
 text(paste("Correlación:", round(cor(merged_dataset$EDADHOM_temp, merged_dataset$EDADMUJ_temp), 2)), x = 20, y = 95)
 
 ```
-La alta correlación entre ambas variables nos permite saber que tanto el hombre como la mujer tienen edades bastante cercanas al momento de casarse.
+La alta correlación entre ambas variables nos permite saber que tanto el hombre como la mujer tienen edades bastante cercanas al momento de casarse. Hay muy pocos puntos atípicos pero los que existen se refieren a que hay una diferencia significativa en la edad.
 
 
