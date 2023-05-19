@@ -31,36 +31,51 @@ train_set <- data[partition,]
 test_set <- data[-partition,]
 ```
 
-colnames(data)
-
 ```{r}
 train_set <- train_set %>% mutate_at(c("diferenciaEdad"), as.factor)
 test_set <- test_set %>% mutate_at(c("diferenciaEdad"), as.factor)
 train_set <- train_set[,-c(6,7)]
 ```
 
+
 ```{r}
-train_set
+ct<-trainControl(method = "cv",number=5, verboseIter=T)
+modelo_dt<-train(diferenciaEdad~.,data=train_set,method="J48",trControl = ct)
+```
+
+```{r}
+modelo_dt
+```
+```{r}
+plot(modelo_dt)
+
 ```
 
 
 
 ```{r}
-arbol_modelo <- rpart(diferenciaEdad~., train_set, method="class")
-arbol_modelo
+colnames(test_set)
+```
+
+```{r}
+y <- test_set[,-c(6, 7)]$diferenciaEdad
+test_set <- test_set[,-c(6, 7)]
 ```
 
 
 ```{r}
-plot(arbol_modelo)
-```
-```{r}
-ct<-trainControl(method = "cv",train_set,number=10, verboseIter=T)
-modelorf<-train(diferenciaEdad~.,data=train_set,method="rf",trControl = ct)
+ypred <- predict(modelo_dt, newdata = test_set)
+ypred <- factor(ypred)
+confusionMatrix(ypred, y)
 ```
 
 ```{r}
-ct<-trainControl(method = "cv",train_set,number=10, verboseIter=T)
-modelorf<-train(Species~.,data=train,method="rpart",trControl = ct)
+modelo_rf <- randomForest(diferenciaEdad~.,train_set, na.action = na.omit)
+summary(modelo_rf)
 ```
 
+```{r}
+ypred_rf <- predict(modelo_rf, newdata = test_set)
+ypred_rf <- factor(ypred_rf)
+confusionMatrix(ypred_rf, y)
+```
