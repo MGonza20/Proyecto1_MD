@@ -58,33 +58,9 @@ plot(arbol_modelo)
 ct<-trainControl(method = "cv",train_set,number=10, verboseIter=T)
 modelorf<-train(diferenciaEdad~.,data=train_set,method="rf",trControl = ct)
 ```
-```{r}
-ct<-trainControl(method = "cv",number=5, verboseIter=T)
-modelorf<-train(diferenciaEdad~.,data=train_set,method="J48",trControl = ct)
-```
 
 ```{r}
-modelorf
+ct<-trainControl(method = "cv",train_set,number=10, verboseIter=T)
+modelorf<-train(Species~.,data=train,method="rpart",trControl = ct)
 ```
-
-
-```{r}
-any(is.na(data))
-```
-
-colnames(test_set)
-
-```{r}
-y <- test_set[,c(6, 7)]
-test_set12 <- test_set[,-c(6, 7)]
-randonForestMo <-randomForest(diferenciaEdad~.,train_set, na.action = na.omit)
-```
-
-```{r}
-ypred <- predict(randonForestMo, newdata = test_set)
-ypred <- factor(ypred)
-confusionMatrix(ypred, y)
-```
-
-
 
