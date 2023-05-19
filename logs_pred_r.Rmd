@@ -1,0 +1,90 @@
+---
+title: "p1"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r echo=FALSE}
+library(dplyr)
+library(knitr)
+library(rpart)       # performing regression trees
+library(rsample)     # data splitting 
+library(rpart.plot)  # plotting regression trees
+library(ipred)       # bagging
+library(caret)       # bagging
+library(randomForest)
+```
+
+```{r echo=FALSE}
+data <- read.csv("data_final_parte2.csv")
+data
+```
+
+``` {r}
+set.seed(5)
+expected_result <- data$diferenciaEdad
+partition <- createDataPartition(y=expected_result, p=.70, list=F)
+train_set <- data[partition,]
+test_set <- data[-partition,]
+```
+
+colnames(data)
+
+```{r}
+train_set <- train_set %>% mutate_at(c("diferenciaEdad"), as.factor)
+test_set <- test_set %>% mutate_at(c("diferenciaEdad"), as.factor)
+train_set <- train_set[,-c(6,7)]
+```
+
+```{r}
+train_set
+```
+
+
+
+```{r}
+arbol_modelo <- rpart(diferenciaEdad~., train_set, method="class")
+arbol_modelo
+```
+
+
+```{r}
+plot(arbol_modelo)
+```
+```{r}
+ct<-trainControl(method = "cv",train_set,number=10, verboseIter=T)
+modelorf<-train(diferenciaEdad~.,data=train_set,method="rf",trControl = ct)
+```
+```{r}
+ct<-trainControl(method = "cv",number=5, verboseIter=T)
+modelorf<-train(diferenciaEdad~.,data=train_set,method="J48",trControl = ct)
+```
+
+```{r}
+modelorf
+```
+
+
+```{r}
+any(is.na(data))
+```
+
+colnames(test_set)
+
+```{r}
+y <- test_set[,c(6, 7)]
+test_set12 <- test_set[,-c(6, 7)]
+randonForestMo <-randomForest(diferenciaEdad~.,train_set, na.action = na.omit)
+```
+
+```{r}
+ypred <- predict(randonForestMo, newdata = test_set)
+ypred <- factor(ypred)
+confusionMatrix(ypred, y)
+```
+
+
+
