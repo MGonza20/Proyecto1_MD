@@ -63,9 +63,17 @@ ypred <- factor(ypred)
 confusionMatrix(ypred, y)
 ```
 
+```{r}
+cl <- makePSOCKcluster(5)
+registerDoParallel(cl)
+```
+
 ```{r Random Forest}
-modelo_rf <- randomForest(diferenciaEdad~.,train_set, na.action = na.omit, mtry=10, ntree=200)
+modelo_rf <- randomForest(diferenciaEdad~.,train_set, na.action = na.omit, mtry=10, ntree=200, verbose=T)
 summary(modelo_rf)
+```
+```{r}
+stopCluster(cl)
 ```
 
 ```{r}
@@ -73,3 +81,29 @@ ypred_rf <- predict(modelo_rf, newdata = test_set)
 ypred_rf <- factor(ypred_rf)
 confusionMatrix(ypred_rf, y)
 ```
+
+
+```{r}
+cl <- makePSOCKcluster(5)
+registerDoParallel(cl)
+```
+
+```{r Random Forest}
+modelo_rf_2 <- randomForest(diferenciaEdad~.,train_set, na.action = na.omit, mtry=4, ntree=500, verbose=T)
+```
+
+```{r}
+stopCluster(cl)
+```
+
+```{r}
+ypred_rf_2 <- predict(modelo_rf_2, newdata = test_set)
+ypred_rf_2 <- factor(ypred_rf_2)
+confusionMatrix(ypred_rf_2, y)
+```
+
+
+
+
+
+
