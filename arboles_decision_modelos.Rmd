@@ -1,0 +1,64 @@
+---
+title: "Untitled"
+author: "Sara Paguaga"
+date: "2023-05-20"
+output: html_document
+---
+
+```{r echo=FALSE}
+library(dplyr)
+library(knitr)
+library(rpart)       # performing regression trees
+library(rsample)     # data splitting 
+library(rpart.plot)  # plotting regression trees
+library(ipred)       # bagging
+library(caret)       # bagging
+library(randomForest)
+library(doParallel)
+```
+
+```{r echo=FALSE}
+data <- read.csv("data_no_codificada.csv")
+data
+```
+
+``` {r}
+set.seed(5)
+expected_result <- data$diferenciaEdad
+partition <- createDataPartition(y=expected_result, p=.70, list=F)
+train_set <- data[partition,]
+test_set <- data[-partition,]
+```
+
+```{r}
+train_set <- train_set %>% mutate_at(c("diferenciaEdad"), as.factor)
+test_set <- test_set %>% mutate_at(c("diferenciaEdad"), as.factor)
+train_set <- train_set[,-c(6,7)]
+```
+
+```{r}
+cl <- makePSOCKcluster(5)
+registerDoParallel(cl)
+```
+
+
+```{r}
+ct<-trainControl(method = "cv",number=5, verboseIter=T)
+modelo_dt<-train(diferenciaEdad~.,data=train_set,method="J48",trControl = ct)
+```
+
+```{r}
+stopCluster(cl)
+```
+
+```{r}
+y <- test_set[,-c(6, 7)]$diferenciaEdad
+test_set <- test_set[,-c(6, 7)]
+```
+
+
+```{r}
+ypred <- predict(modelo_dt, newdata = test_set)
+ypred <- factor(ypred)
+confusionMatrix(ypred, y)
+```
