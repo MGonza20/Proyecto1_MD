@@ -62,3 +62,14 @@ ypred <- predict(modelo_dt, newdata = test_set)
 ypred <- factor(ypred)
 confusionMatrix(ypred, y)
 ```
+
+```{r Random Forest}
+modelo_rf <- randomForest(diferenciaEdad~.,train_set, na.action = na.omit, mtry=10, ntree=200)
+summary(modelo_rf)
+```
+
+```{r}
+ypred_rf <- predict(modelo_rf, newdata = test_set)
+ypred_rf <- factor(ypred_rf)
+confusionMatrix(ypred_rf, y)
+```
