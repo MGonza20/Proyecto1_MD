@@ -19,14 +19,19 @@ library(dummy)
 library(fastDummies)
 library(randomForest)
 library(corrplot)
+library(doParallel)
 ```
 
 ## Leer Data
 
+```{r}
+options(mc.cores = parallel::detectCores())
+```
+
 Se leera el archivo de la data final parte 2
 
 ```{r}
-dataframe <- read.csv("data_no_codificada.csv")
+dataframe <- read.csv("data_final_parte2.csv")
 ```
 
 ```{r}
@@ -37,46 +42,42 @@ dataframe
 head(str(dataframe))
 ```
 
-
-```{r}
-dataframe_hombre <- dataframe %>% filter(!is.na(edadHombre))
-dataframe_hombre$edadHombre <- as.factor(dataframe_hombre$edadHombre)
-```
-
+## Entrenar la data
 
 ```{r}
 set.seed(5)
-partition_hombre <- createDataPartition(y = dataframe_hombre$edadHombre, p = 0.6, list = FALSE)
-train_set_hombre <- dataframe_hombre[partition_hombre, ]
-test_set_hombre <- dataframe_hombre[-partition_hombre, ]
+expected_result <- dataframe$diferenciaEdad
+partition <- createDataPartition(y=expected_result, p=.60, list=F)
+train_set <- dataframe[partition,]
+test_set <- dataframe[-partition,]
 ```
 
+### --> Preparar los modelos con diferentes kernels
+``` {r, warning=FALSE}
+train_set <- na.omit(train_set)
+test_set <- na.omit(test_set)
 
-
-
-```{r}
-model_hombre <- glm(edadHombre ~ ., data = train_set_hombre, family = binomial)
-```
-
-
-```{r}
-dataframe_mujer <- dataframe %>% filter(!is.na(edadMujer))
-dataframe_mujer$edadMujer <- as.factor(dataframe_mujer$edadMujer)
-```
-
-
-```{r}
-set.seed(5)
-partition_mujer <- createDataPartition(y = dataframe_mujer$edadMujer, p = 0.6, list = FALSE)
-train_set_mujer <- dataframe_mujer[partition_mujer, ]
-test_set_mujer <- dataframe_mujer[-partition_mujer, ]
+train_set$diferenciaEdad <- as.factor(train_set$diferenciaEdad)
+test_set$diferenciaEdad <- as.factor(test_set$diferenciaEdad)
 ```
 
 ```{r}
-model_mujer <- glm(edadMujer ~ ., data = train_set_mujer, family = binomial(link = "logit"))
+cl <- makePSOCKcluster(5)
+registerDoParallel(cl)
 ```
 
+```{r}
+modelo_svm_01 <- svm(diferenciaEdad~., data=train_set, cost=0.5, kernel="linear")
+```
 
+```{r}
+stopCluster(cl)
+```
 
+```{r}
+prediction_01 <- predict(modelo_svm_01, newdata = test_set)
+```
 
-
+```{r}
+confusionMatrix(test_set$diferenciaEdad, prediction_01)
+```
