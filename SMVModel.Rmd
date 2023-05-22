@@ -1,1 +1,82 @@
+---
+title: "SVMModel"
+output: html_document
+date: "2023-05-19"
+---
+
+## Importar librerias
+
+```{r echo=FALSE}
+library(dplyr)
+library(knitr)
+library(rpart)       # performing regression trees
+library(rsample)     # data splitting 
+library(rpart.plot)  # plotting regression trees
+library(ipred)       # bagging
+library(caret)       # bagging
+library(e1071)
+library(dummy)
+library(fastDummies)
+library(randomForest)
+library(corrplot)
+```
+
+## Leer Data
+
+Se leera el archivo de la data final parte 2
+
+```{r}
+dataframe <- read.csv("data_no_codificada.csv")
+```
+
+```{r}
+dataframe
+```
+
+```{r}
+head(str(dataframe))
+```
+
+
+```{r}
+dataframe_hombre <- dataframe %>% filter(!is.na(edadHombre))
+dataframe_hombre$edadHombre <- as.factor(dataframe_hombre$edadHombre)
+```
+
+
+```{r}
+set.seed(5)
+partition_hombre <- createDataPartition(y = dataframe_hombre$edadHombre, p = 0.6, list = FALSE)
+train_set_hombre <- dataframe_hombre[partition_hombre, ]
+test_set_hombre <- dataframe_hombre[-partition_hombre, ]
+```
+
+
+
+
+```{r}
+model_hombre <- glm(edadHombre ~ ., data = train_set_hombre, family = binomial)
+```
+
+
+```{r}
+dataframe_mujer <- dataframe %>% filter(!is.na(edadMujer))
+dataframe_mujer$edadMujer <- as.factor(dataframe_mujer$edadMujer)
+```
+
+
+```{r}
+set.seed(5)
+partition_mujer <- createDataPartition(y = dataframe_mujer$edadMujer, p = 0.6, list = FALSE)
+train_set_mujer <- dataframe_mujer[partition_mujer, ]
+test_set_mujer <- dataframe_mujer[-partition_mujer, ]
+```
+
+```{r}
+model_mujer <- glm(edadMujer ~ ., data = train_set_mujer, family = binomial(link = "logit"))
+```
+
+
+
+
 
