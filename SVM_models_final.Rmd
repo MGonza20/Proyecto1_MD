@@ -1,0 +1,113 @@
+---
+title: "SVMModel"
+output: html_document
+date: "2023-05-19"
+---
+
+## Importar librerias
+
+```{r echo=FALSE}   
+library(dplyr)
+library(knitr)
+library(rpart)       # performing regression trees
+library(rsample)     # data splitting 
+library(rpart.plot)  # plotting regression trees
+library(ipred)       # bagging
+library(caret)       # bagging
+library(e1071)
+library(dummy)
+library(fastDummies)
+library(randomForest)
+library(corrplot)
+library(doParallel)
+```
+
+## Leer Data
+
+```{r}
+options(mc.cores = parallel::detectCores())
+```
+
+Se leera el archivo de la data final parte 2
+
+```{r}
+dataframe <- read.csv("data_final_parte2.csv")
+```
+
+```{r}
+dataframe
+```
+
+```{r}
+head(str(dataframe))
+```
+
+## Entrenar la data
+
+```{r}
+set.seed(5)
+expected_result <- dataframe$diferenciaEdad
+partition <- createDataPartition(y=expected_result, p=.60, list=F)
+train_set <- dataframe[partition,]
+test_set <- dataframe[-partition,]
+```
+
+### --> Preparar los modelos con diferentes kernels
+``` {r, warning=FALSE}
+train_set <- na.omit(train_set)
+test_set <- na.omit(test_set)
+
+train_set$diferenciaEdad <- as.factor(train_set$diferenciaEdad)
+test_set$diferenciaEdad <- as.factor(test_set$diferenciaEdad)
+```
+
+```{r}
+cl <- makePSOCKcluster(5)
+registerDoParallel(cl)
+```
+
+```{r}
+modelo_svm_01 <- svm(diferenciaEdad~., data=train_set, cost=0.5, kernel="linear")
+```
+
+```{r}
+stopCluster(cl)
+```
+
+```{r}
+prediction_01 <- predict(modelo_svm_01, newdata = test_set)
+```
+
+```{r}
+confusionMatrix(test_set$diferenciaEdad, prediction_01)
+```
+
+```{r}
+# ==========================================
+cores <- makeCluster(6)
+registerDoParallel(cores = cores)
+# ==========================================
+modelTunedL <- tune.svm(diferenciaEdad~., data=train_set, cost=c(0.01, 0.1), kernel="linear")
+```
+
+
+```{r}
+modelTunedL
+```
+
+```{r}
+bestModel <- modelTunedL$best.model
+predictionL02 <- predict(bestModel, newdata=test_set)
+```
+
+```{r}
+cm_tuned <- confusionMatrix(predictionL02, test_set$diferenciaEdad)
+print(cm_tuned)
+```
+
+```{r}
+stopCluster(cores)
+```
+
+
+
