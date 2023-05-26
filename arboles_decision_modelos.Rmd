@@ -18,7 +18,7 @@ library(doParallel)
 ```
 
 ```{r echo=FALSE}
-data <- read.csv("data_final_parte2.csv")
+data <- read.csv("data_no_codificada.csv")
 data
 ```
 
@@ -43,7 +43,9 @@ registerDoParallel(cl)
 
 
 ```{r}
-ct<-trainControl(method = "cv",number=5, verboseIter=T)
+#cores <- makeCluster(7)
+#registerDoParallel(cores = cores)
+ct<-trainControl(method = "cv",number=5, verbose=T)
 modelo_dt<-train(diferenciaEdad~.,data=train_set,method="J48",trControl = ct)
 ```
 
@@ -62,3 +64,82 @@ ypred <- predict(modelo_dt, newdata = test_set)
 ypred <- factor(ypred)
 confusionMatrix(ypred, y)
 ```
+
+```{r}
+cl <- makePSOCKcluster(5)
+registerDoParallel(cl)
+```
+
+```{r Random Forest}
+modelo_rf <- randomForest(diferenciaEdad~.,train_set, na.action = na.omit, mtry=10, ntree=200, verbose=T)
+summary(modelo_rf)
+```
+
+```{r}
+stopCluster(cl)
+```
+
+```{r}
+ypred_rf <- predict(modelo_rf, newdata = test_set)
+ypred_rf <- factor(ypred_rf)
+confusionMatrix(ypred_rf, y)
+```
+
+
+```{r}
+cl <- makePSOCKcluster(5)
+registerDoParallel(cl)
+```
+
+```{r Random Forest}
+modelo_rf_2 <- randomForest(diferenciaEdad~.,train_set, na.action = na.omit, mtry=4, ntree=500, verbose=T)
+```
+
+```{r}
+stopCluster(cl)
+```
+
+```{r}
+ypred_rf_2 <- predict(modelo_rf_2, newdata = test_set)
+ypred_rf_2 <- factor(ypred_rf_2)
+confusionMatrix(ypred_rf_2, y)
+```
+
+```{r}
+cl <- makePSOCKcluster(5)
+registerDoParallel(cl)
+```
+
+```{r Random Forest}
+modelo_rf_3 <- randomForest(diferenciaEdad~.,train_set, na.action = na.omit, mtry=4, ntree=1000, verbose=T)
+```
+
+```{r}
+stopCluster(cl)
+```
+
+```{r}
+ypred_rf_3 <- predict(modelo_rf_3, newdata = test_set)
+ypred_rf_3 <- factor(ypred_rf_3)
+confusionMatrix(ypred_rf_3, y)
+```
+
+```{r}
+cl <- makePSOCKcluster(5)
+registerDoParallel(cl)
+```
+
+```{r Random Forest}
+modelo_rf_4 <- randomForest(diferenciaEdad~.,train_set, na.action = na.omit, mtry=6, ntree=1000, verbose=T)
+```
+
+```{r}
+stopCluster(cl)
+```
+
+```{r}
+ypred_rf_4 <- predict(modelo_rf_4, newdata = test_set)
+ypred_rf_4 <- factor(ypred_rf_4)
+confusionMatrix(ypred_rf_4, y)
+```
+
